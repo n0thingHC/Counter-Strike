@@ -41,6 +41,6 @@ Counter-Strike atinge milhões de jogadores ao redor do mundo. Só a versão **G
 
 ## 6. Fontes
 - [Valve Corporation](https://www.valvesoftware.com/)
-- [História de Counter-Strike](https://pt.wikipedia.org/wiki/Counter-Strike)
+- [História do Counter-Strike](https://pt.wikipedia.org/wiki/Counter-Strike)
 - [CS:GO no Steam](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/)
 - [Counter-Strike 2 Anúncio](https://store.steampowered.com/news/group/3382/)
