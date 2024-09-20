@@ -1,4 +1,4 @@
-# Estrutura do Site sobre *Counter-Strike* (Em formato de lista)
+# Estrutura do Site sobre *Counter-Strike* 
 
 ## 1. Página Inicial
 - **Recursos HTML**:
