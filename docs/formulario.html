@@ -57,29 +57,32 @@
 
     <label for="email">E-mail:</label>
     <input type="email" id="email" name="email" required>
-
+<br>
     <label for="versao">Qual versão do Counter-Strike você já jogou?</label>
     <select id="versao" name="versao" required>
+		<option value="" disabled selected>Selecione...</option>
         <option value="cs_1.6">Counter-Strike 1.6</option>
         <option value="cs_source">Counter-Strike: Source</option>
         <option value="cs_go">Counter-Strike: Global Offensive</option>
         <option value="cs2">Counter-Strike 2</option>
         <option value="nenhuma">Nenhuma</option>
     </select>
-
+</br>
     <label>Você acompanha os campeonatos de CS2 ao vivo?</label>
+	<br>
     <div class="checkbox-group">
         <label for="sim">Sim</label>
         <input type="checkbox" id="sim" name="acompanha" value="sim">
         <label for="nao">Não</label>
         <input type="checkbox" id="nao" name="acompanha" value="nao">
     </div>
-
+	</br>
     <label for="time">Se sim, para qual time você torce?</label>
     <input type="text" id="time" name="time">
 
     <label for="mapa">Qual seu mapa favorito?</label>
     <select id="mapa" name="mapa" required>
+		<option value="" disabled selected>Selecione...</option>
         <option value="de_dust2">Dust 2</option>
         <option value="de_mirage">Mirage</option>
         <option value="de_inferno">Inferno</option>
