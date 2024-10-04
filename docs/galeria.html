@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria - Counter-Strike</title>
     <style>
-           body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -54,37 +54,95 @@
             margin-top: 20px;
         }
         .gallery { 
-		display: flex; 
-		flex-wrap: wrap; 
-		}
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+        }
+        .gallery figure {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+        }
         .gallery img { 
-		width: 200px; 
-		height: auto; 
-		margin: 10px; 
-		border: 2px solid #ccc; 
-		border-radius: 5px; 
-		}
+            width: 100%; 
+            height: auto; 
+            border: 2px solid #ccc; 
+            border-radius: 5px; 
+        }
+        .gallery figcaption {
+            margin-top: 5px;
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
-	<header>
+    <header>
         <img src="banner.jpeg" alt="Banner 1">
-   </header>
-<nav>
-    <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="historia.html">História</a></li>
-        <li><a href="como-funciona.html">Como Funciona</a></li>
-        <li><a href="campeonatos.html">Campeonatos</a></li>
-        <li><a href="ranking.html">Ranking</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="comunidade.html">Comunidade</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-    </ul>
-</nav>
-<section>
-    <h2>Galeria de Imagens</h2>
-    <div class="gallery">
-        <figure>
-            <img src="imagem1.jpg" alt="Imagem 1">
-            <figcaption>Descrição
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="historia.html">História</a></li>
+            <li><a href="como-funciona.html">Como Funciona</a></li>
+            <li><a href="campeonatos.html">Campeonatos</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="comunidade.html">Comunidade</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Galeria de Imagens</h2>
+        <div class="gallery">
+            <figure>
+                <img src="imagem1.jpeg" alt="Imagem 1">
+                <figcaption>ESL One Cologne 2016 - Braziliam Champion Major</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem2.jpeg" alt="Imagem 2">
+                <figcaption>Descrição Imagem 2</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem3.jpeg" alt="Imagem 3">
+                <figcaption>BLAST Premier Fall Final 2024</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem4.jpeg" alt="Imagem 4">
+                <figcaption>BetBoom Dacha Belgrade Season 2</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem5.jpeg" alt="Imagem 5">
+                <figcaption>PGL Major Antwerp 2022</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem6.jpeg" alt="Imagem 6">
+                <figcaption>Descrição Imagem 6</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem7.jpeg" alt="Imagem 7">
+                <figcaption>Descrição Imagem 7</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem8.jpeg" alt="Imagem 8">
+                <figcaption>Descrição Imagem 8</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem9.jpeg" alt="Imagem 9">
+                <figcaption>HLTV Award Show 2023</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem10.jpeg" alt="Imagem 10">
+                <figcaption>HLTV Award Show 2023</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem11.jpeg" alt="Imagem 11">
+                <figcaption>HLTV Award Show 2023</figcaption>
+            </figure>
+            <figure>
+                <img src="imagem12.jpeg" alt="Imagem 12">
+                <figcaption>HLTV Award Show 2023</figcaption>
+            </figure>
+        </div>
+    </section>
+</body>
+</html>

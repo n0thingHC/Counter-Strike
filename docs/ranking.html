@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ranking - Counter-Strike</title>
+    <title>Counter-Strike World Ranking</title>
     <style>
-          body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            text-align: center;
         }
         header, nav, footer {
             background-color: white;
@@ -28,37 +29,72 @@
         section {
             padding: 20px;
         }
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            height: 300px;
-        }
-        .carousel img {
-            width: 100%;
-            height: auto;
-        }
-        .news {
+        .team-list {
             display: flex;
             flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
         }
-        .news-item {
-            display: flex;
+        .team {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 50%;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .team-logo {
+            width: 120px;
+            height: auto;
+        }
+        .team-name {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .team-points {
+            font-size: 18px;
+            color: #555;
+            margin-top: 10px;
+        }
+        .team-players {
+            display: none;
+            margin-top: 15px;
+        }
+        .player {
             margin: 10px 0;
         }
-        .news-item img {
-            width: 100px;
+        .player-photo {
+            width: 50px;
             height: auto;
+            border-radius: 50%;
             margin-right: 10px;
+            vertical-align: middle;
+        }
+        .player-name {
+            font-size: 16px;
+            color: #333;
+            display: inline-block;
+            vertical-align: middle;
         }
         footer {
             margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+            color: #333;
         }
     </style>
 </head>
 <body>
-	<header>
-        <img src="banner.jpeg" alt="Banner 1">
-   </header>
+
+<header>
+    <img src="banner.jpeg" alt="Banner 1">
+</header>
+
 <nav>
     <ul>
         <li><a href="index.html">Início</a></li>
@@ -69,33 +105,125 @@
         <li><a href="noticias.html">Notícias</a></li>
         <li><a href="comunidade.html">Comunidade</a></li>
         <li><a href="galeria.html">Galeria</a></li>
+        <li><a href="formulario.html">Formulario</a></li>
     </ul>
 </nav>
+
 <section>
-    <h2>Ranking Mundial</h2>
-    <table>
-        <tr>
-            <th>Time</th>
-            <th>Pontos</th>
-        </tr>
-        <tr>
-            <td>Time A</td>
-            <td>1000</td>
-        </tr>
-        <tr>
-            <td>Time B</td>
-            <td>900</td>
-        </tr>
-        <tr>
-            <td>Time C</td>
-            <td>850</td>
-        </tr>
-        <tr>
-            <td>Time D</td>
-            <td>800</td>
-        </tr>
-    </table>
+    <h1>Counter-Strike World Ranking on September 30th, 2024</h1>
+
+    <div class="team-list">
+        <!-- Time 1 -->
+        <div class="team" onclick="togglePlayers(1)">
+            <img class="team-logo" src="logo_team1.jpg" alt="Logo Time 1">
+            <div class="team-name">Team 1</div>
+            <div class="team-points">Pontos: 1500</div>
+            <div id="team-players-1" class="team-players">
+                <div class="player">
+                    <img class="player-photo" src="player1.jpg" alt="Player 1">
+                    <span class="player-name">Jogador 1</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player2.jpg" alt="Player 2">
+                    <span class="player-name">Jogador 2</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player3.jpg" alt="Player 3">
+                    <span class="player-name">Jogador 3</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player4.jpg" alt="Player 4">
+                    <span class="player-name">Jogador 4</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player5.jpg" alt="Player 5">
+                    <span class="player-name">Jogador 5</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="coach.jpg" alt="Coach">
+                    <span class="player-name">Técnico</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Time 2 -->
+        <div class="team" onclick="togglePlayers(2)">
+            <img class="team-logo" src="logo_team2.jpg" alt="Logo Time 2">
+            <div class="team-name">Team 2</div>
+            <div class="team-points">Pontos: 1450</div>
+            <div id="team-players-2" class="team-players">
+                <div class="player">
+                    <img class="player-photo" src="player1_team2.jpg" alt="Player 1">
+                    <span class="player-name">Jogador 1</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player2_team2.jpg" alt="Player 2">
+                    <span class="player-name">Jogador 2</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player3_team2.jpg" alt="Player 3">
+                    <span class="player-name">Jogador 3</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player4_team2.jpg" alt="Player 4">
+                    <span class="player-name">Jogador 4</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player5_team2.jpg" alt="Player 5">
+                    <span class="player-name">Jogador 5</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="coach_team2.jpg" alt="Coach">
+                    <span class="player-name">Técnico</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Time 3 -->
+        <div class="team" onclick="togglePlayers(3)">
+            <img class="team-logo" src="logo_team3.jpg" alt="Logo Time 3">
+            <div class="team-name">Team 3</div>
+            <div class="team-points">Pontos: 1400</div>
+            <div id="team-players-3" class="team-players">
+                <div class="player">
+                    <img class="player-photo" src="player1_team3.jpg" alt="Player 1">
+                    <span class="player-name">Jogador 1</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player2_team3.jpg" alt="Player 2">
+                    <span class="player-name">Jogador 2</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player3_team3.jpg" alt="Player 3">
+                    <span class="player-name">Jogador 3</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player4_team3.jpg" alt="Player 4">
+                    <span class="player-name">Jogador 4</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="player5_team3.jpg" alt="Player 5">
+                    <span class="player-name">Jogador 5</span>
+                </div>
+                <div class="player">
+                    <img class="player-photo" src="coach_team3.jpg" alt="Coach">
+                    <span class="player-name">Técnico</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+
+<footer>
+    <p>&copy; 2024 Counter-Strike World Ranking. Todos os direitos reservados.</p>
+</footer>
+
+<script>
+    function togglePlayers(teamId) {
+        const players = document.getElementById('team-players-' + teamId);
+        players.style.display = players.style.display === 'block' ? 'none' : 'block';
+    }
+</script>
+
 </body>
 </html>
