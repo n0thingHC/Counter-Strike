@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campeonatos - Counter-Strike</title>
+    <title>Próximos Grandes Campeonatos de Counter-Strike</title>
     <style>
-           body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
+            text-align: center;
         }
         header, nav, footer {
             background-color: white;
-            color: white;
-            padding: 0px;
+            padding: 20px;
             text-align: center;
         }
         nav ul {
@@ -23,42 +23,74 @@
         }
         nav ul li {
             display: inline;
-            margin: 0 15px;
+            margin: 0 10px;
         }
         section {
             padding: 20px;
         }
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            height: 300px;
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #333;
         }
-        .carousel img {
-            width: 100%;
-            height: auto;
-        }
-        .news {
+        .lista-campeonatos {
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
-        .news-item {
-            display: flex;
-            margin: 10px 0;
+        .campeonato {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 50%;
+            margin: 15px 0;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
         }
-        .news-item img {
-            width: 100px;
+        .campeonato:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .logo-campeonato {
+            width: 120px;
             height: auto;
-            margin-right: 10px;
+            float: left;
+            margin-right: 20px;
+        }
+        .info-campeonato {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+        }
+        .info-campeonato h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #111;
+        }
+        .localização {
+            display: flex;
+            align-items: center;
+        }
+        .localização img {
+            width: 30px;
+            height: auto;
+            margin-left: 10px;
         }
         footer {
             margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            color: #333;
         }
     </style>
 </head>
 <body>
-	<header>
-        <img src="banner.jpeg" alt="Banner 1">
-   </header>
+
+<header>
+    <h1>Próximos Grandes Campeonatos de Counter-Strike</h1>
+</header>
+
 <nav>
     <ul>
         <li><a href="index.html">Início</a></li>
@@ -71,10 +103,62 @@
         <li><a href="galeria.html">Galeria</a></li>
     </ul>
 </nav>
+
 <section>
-    <h2>Campeonatos Mundiais</h2>
-    <p>Detalhes sobre os campeonatos.</p>
+    <div class="lista-campeonatos">
+        <!-- Campeonato 1 -->
+        <div class="campeonato">
+            <img class="logo-campeonato" src="logo1.jpeg" alt="Logo Campeonato 1">
+            <div class="info-campeonato">
+                <h2>ESL Challenger Atlanta 2024</h2>
+                <p><strong>Premiação:</strong> $100,000</p>
+                <p><strong>Data:</strong> 4 de Outubro, 2024 - 6 de Outubro, 2024</p>
+                <p class="localização"><strong>Local:</strong> Atlanta, Estados Unidos <img src="bandeira_eua.jpeg" alt="Bandeira Estados Unidos"></p>
+                <p><strong>Quantidade de Times:</strong> 8</p>
+            </div>
+        </div>
+
+        <!-- Campeonato 2 -->
+        <div class="campeonato">
+            <img class="logo-campeonato" src="logo2.jpeg" alt="Logo Campeonato 2">
+            <div class="info-campeonato">
+                <h2>IEM Rio 2024</h2>
+                <p><strong>Premiação:</strong> $250,000</p>
+                <p><strong>Data:</strong> 07 de Outubro, 2024 - 13 de Outubro, 2024</p>
+                <p class="localização"><strong>Local:</strong> Rio de Janeiro, Brasil <img src="bandeira_brasil.jpeg" alt="Bandeira Brasil"></p>
+                <p><strong>Quantidade de Times:</strong> 16</p>
+            </div>
+        </div>
+
+        <!-- Campeonato 3 -->
+        <div class="campeonato">
+            <img class="logo-campeonato" src="logo3.jpeg" alt="Logo Campeonato 3">
+            <div class="info-campeonato">
+                <h2>ESL Challenger Katowice 2024</h2>
+                <p><strong>Premiação:</strong> $100,000</p>
+                <p><strong>Data:</strong> 25 de Outubro, 2024 - 27 de Outubro, 2024</p>
+                <p class="localização"><strong>Local:</strong> Katowice, Poland <img src="bandeira_polonia.jpeg" alt="Bandeira Polónia"></p>
+                <p><strong>Quantidade de Times:</strong> 8</p>
+            </div>
+        </div>
+
+        <!-- Campeonato 4 -->
+        <div class="campeonato">
+            <img class="logo-campeonato" src="logo4.jpeg" alt="Logo Campeonato 4">
+            <div class="info-campeonato">
+                <h2>BLAST Premier World FInal 2024</h2>
+                <p><strong>Premiação:</strong> $1,000,000</p>
+                <p><strong>Data:</strong> 30 de Outubro, 2024 - 03 de Novembro, 2024</p>
+                <p class="localização"><strong>Local:</strong> Singapore, Singapore <img src="bandeira_singapura.jpeg" alt="Bandeira Singapura"></p>
+                <p><strong>Quantidade de Times:</strong> 8</p>
+            </div>
+        </div>
+    </div>
 </section>
-<footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+
+<footer>
+    <p>&copy; 2024 Próximos Grandes Campeonatos de Counter-Strike. Todos os direitos reservados.</p>
+</footer>
+
 </body>
 </html>
