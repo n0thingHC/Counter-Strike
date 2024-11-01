@@ -1,0 +1,422 @@
+/**/INICIO
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    
+}
+header, nav, footer {
+    background-color: white;
+    color: white;
+    padding: 0px;
+    text-align: center;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+section {
+    padding: 20px;
+}
+.carousel {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+}
+.carousel img {
+    width: 100%;
+    height: auto;
+}
+.news {
+    display: flex;
+    flex-direction: column;
+}
+.news-item {
+    display: flex;
+    margin: 10px 0;
+}
+.news-item img {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+footer {
+    margin-top: 20px;
+}
+
+
+/**/HISTORIA
+
+
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f4f4f4;
+}
+header, nav, footer {
+   background-color: white;
+   color: white;
+   padding: 0px;
+   text-align: center;
+}
+nav ul {
+   list-style-type: none;
+   padding: 0;
+}
+nav ul li {
+   display: inline;
+   margin: 0 15px;
+}
+section {
+   padding: 20px;
+}
+.carousel {
+   position: relative;
+   overflow: hidden;
+   height: 300px;
+}
+.carousel img {
+   width: 100%;
+   height: auto;
+}
+.news {
+   display: flex;
+   flex-direction: column;
+}
+.news-item {
+   display: flex;
+   margin: 10px 0;
+}
+.news-item img {
+   width: 100px;
+   height: auto;
+   margin-right: 10px;
+}
+footer {
+   margin-top: 20px;
+}
+
+
+/**/COMO FUNCIONA
+
+
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, nav, footer {
+            background-color: white;
+            color: white;
+            padding: 0px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        section {
+            padding: 20px;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+        .news {
+            display: flex;
+            flex-direction: column;
+        }
+        .news-item {
+            display: flex;
+            margin: 10px 0;
+        }
+        .news-item img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+        footer {
+            margin-top: 20px;
+        }
+
+/**/CAMPEONATO
+
+        
+
+/**/RANKING
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        header, nav, footer {
+            background-color: white;
+            color: white;
+            padding: 0px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        section {
+            padding: 20px;
+        }
+        .team-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .team {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 50%;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .team-logo {
+            width: 120px;
+            height: auto;
+        }
+        .team-name {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .team-points {
+            font-size: 18px;
+            color: #555;
+            margin-top: 10px;
+        }
+        .team-players {
+            display: none;
+            margin-top: 15px;
+        }
+        .player {
+            margin: 10px 0;
+        }
+        .player-photo {
+            width: 50px;
+            height: auto;
+            border-radius: 50%;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .player-name {
+            font-size: 16px;
+            color: #333;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+/**/NOTICIA
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, nav, footer {
+            background-color: white;
+            color: white;
+            padding: 0px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        section {
+            padding: 20px;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+        .news {
+            display: flex;
+            flex-direction: column;
+        }
+        .news-item {
+            display: flex;
+            margin: 10px 0;
+        }
+        .news-item img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+        footer {
+            margin-top: 20px;
+        }
+
+/**/COMUNIDADE
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, nav, footer {
+            background-color: white;
+            color: white;
+            padding: 0px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        section {
+            padding: 20px;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+        .news {
+            display: flex;
+            flex-direction: column;
+        }
+        .news-item {
+            display: flex;
+            margin: 10px 0;
+        }
+        .news-item img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+        footer {
+            margin-top: 20px;
+        }
+
+/**/GALERIA
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, nav, footer {
+            background-color: white;
+            color: white;
+            padding: 0px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        section {
+            padding: 20px;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+        .news {
+            display: flex;
+            flex-direction: column;
+        }
+        .news-item {
+            display: flex;
+            margin: 10px 0;
+        }
+        .news-item img {
+            width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+        footer {
+            margin-top: 20px;
+        }
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: space-between; 
+        }
+        .gallery figure {
+            width: 200px;
+            margin: 10px;
+            text-align: center;
+        }
+        .gallery img { 
+            width: 100%; 
+            height: auto; 
+            border: 2px solid #ccc; 
+            border-radius: 5px; 
+        }
+        .gallery figcaption {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
