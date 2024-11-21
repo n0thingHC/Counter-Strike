@@ -116,7 +116,12 @@
 </footer>
 
 <script>
-    let teams = [];
+    // Carregar dados do LocalStorage quando a página é carregada
+    let teams = JSON.parse(localStorage.getItem("teams")) || [];
+
+    function saveTeams() {
+        localStorage.setItem("teams", JSON.stringify(teams));
+    }
 
     function addTeam() {
         const teamId = teams.length + 1;
@@ -130,6 +135,7 @@
         teams.push(teamData);
         sortTeams();
         renderTeams();
+        saveTeams(); // Salva as alterações no LocalStorage
     }
 
     function renderTeams() {
@@ -172,6 +178,7 @@
 
         sortTeams();
         renderTeams();
+        saveTeams(); // Salva as alterações no LocalStorage
     }
 
     function addPlayer(teamId) {
@@ -182,6 +189,7 @@
         if (playerName && playerPhoto) {
             team.players.push({ name: playerName, photo: playerPhoto });
             renderPlayers(teamId);
+            saveTeams(); // Salva as alterações no LocalStorage
         }
     }
 
@@ -204,6 +212,9 @@
     function sortTeams() {
         teams.sort((a, b) => b.points - a.points);
     }
+
+    // Renderizar os times ao carregar a página
+    renderTeams();
 </script>
 
 </body>
