@@ -61,6 +61,7 @@
             border-radius: 10px;
             display: block;
             margin: 0 auto 5px;
+            cursor: pointer;
         }
         .player-name {
             font-size: 14px;
@@ -198,15 +199,29 @@
         const playersContainer = document.getElementById(`players-container-${teamId}`);
         playersContainer.innerHTML = "";
 
-        team.players.forEach(player => {
+        team.players.forEach((player, index) => {
             const playerDiv = document.createElement("div");
             playerDiv.classList.add("player");
             playerDiv.innerHTML = `
-                <img src="${player.photo || "placeholder.png"}" class="player-photo" alt="Foto do Jogador">
+                <img src="${player.photo || "placeholder.png"}" class="player-photo" onclick="editPlayer(${teamId}, ${index})" alt="Foto do Jogador">
                 <span class="player-name">${player.name}</span>
             `;
             playersContainer.appendChild(playerDiv);
         });
+    }
+
+    function editPlayer(teamId, playerIndex) {
+        const team = teams.find(t => t.id === teamId);
+        const player = team.players[playerIndex];
+
+        const newName = prompt("Digite o novo nome do jogador:", player.name);
+        const newPhoto = prompt("Insira o novo URL da foto do jogador:", player.photo);
+
+        if (newName) player.name = newName;
+        if (newPhoto) player.photo = newPhoto;
+
+        renderPlayers(teamId); // Atualiza a lista de jogadores
+        saveTeams(); // Salva as alterações no LocalStorage
     }
 
     function sortTeams() {
