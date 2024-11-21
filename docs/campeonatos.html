@@ -120,11 +120,10 @@
         <li><a href="galeria.html">Galeria</a></li>
     </ul>
 </nav>
-<br>
+
 <header>
     <h1>Próximos Grandes Campeonatos de Counter-Strike</h1>
 </header>
-</br>
 
 <section>
     <div class="lista-campeonatos" id="lista-campeonatos">
@@ -148,7 +147,7 @@
 </footer>
 
 <script>
-    let campeonatos = [];
+    let campeonatos = JSON.parse(localStorage.getItem('campeonatos')) || [];
 
     function atualizarLista() {
         const lista = document.getElementById('lista-campeonatos');
@@ -177,14 +176,27 @@
         const premiacao = document.getElementById('premiacao').value;
         const data = document.getElementById('data').value;
         const local = document.getElementById('local').value;
-        const logo = URL.createObjectURL(document.getElementById('logo').files[0]);
-        const bandeira = URL.createObjectURL(document.getElementById('bandeira').files[0]);
 
-        campeonatos.push({ nome, premiacao, data, local, logo, bandeira });
-        atualizarLista();
+        const logoFile = document.getElementById('logo').files[0];
+        const bandeiraFile = document.getElementById('bandeira').files[0];
 
-        // Limpa o formulário
-        document.getElementById('form-campeonato').reset();
+        const readerLogo = new FileReader();
+        const readerBandeira = new FileReader();
+
+        readerLogo.onload = function () {
+            const logo = readerLogo.result;
+            readerBandeira.onload = function () {
+                const bandeira = readerBandeira.result;
+
+                campeonatos.push({ nome, premiacao, data, local, logo, bandeira });
+                localStorage.setItem('campeonatos', JSON.stringify(campeonatos));
+                atualizarLista();
+
+                document.getElementById('form-campeonato').reset();
+            };
+            readerBandeira.readAsDataURL(bandeiraFile);
+        };
+        readerLogo.readAsDataURL(logoFile);
     }
 
     function editarCampeonato(index) {
@@ -194,16 +206,17 @@
         document.getElementById('data').value = campeonato.data;
         document.getElementById('local').value = campeonato.local;
 
-        // Remove o campeonato da lista antes de re-adicioná-lo
-        campeonatos.splice(index, 1);
-        atualizarLista();
+        removerCampeonato(index);
     }
 
     function removerCampeonato(index) {
         campeonatos.splice(index, 1);
+        localStorage.setItem('campeonatos', JSON.stringify(campeonatos));
         atualizarLista();
     }
+
+    atualizarLista();
 </script>
 
 </body>
-</html
+</html>
