@@ -76,6 +76,21 @@
             max-width: 800px;
         }
 
+        .edit-button {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .edit-button:hover {
+            background-color: #0056b3;
+        }
+
         footer {
             text-align: center;
             padding: 20px;
@@ -83,6 +98,49 @@
             color: white;
             margin-top: 40px;
         }
+
+        /* Estilo para o diálogo */
+        .dialog-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dialog-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .dialog-box input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .dialog-box button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .dialog-box button:hover {
+            background-color: #0056b3;
+        }
+
     </style>
 </head>
 <body>
@@ -109,48 +167,91 @@
     <p>Counter-Strike surgiu como um mod (modificação) do jogo Half-Life em 1999. Ele foi criado por Minh Le e Jess Cliffe, com o objetivo de criar um jogo de tiro multiplayer baseado em equipes. O sucesso do mod chamou a atenção da desenvolvedora Valve, que adquiriu os direitos em 2000 e lançou a versão oficial.</p>
 
     <div class="game-section">
-        <img src="cs1.6_image.jpg" alt="Counter-Strike 1.6">
+        <img src="cs1.6_image.jpg" alt="Counter-Strike 1.6" id="image-1">
         <div class="game-info">
             <h1>Counter-Strike 1.6 (2000)</h1>
             <p>A primeira versão oficial do mod lançado pela Valve. Estabeleceu as bases do jogo com sua jogabilidade baseada em rodadas e mapas icônicos como de_dust.</p>
+            <button class="edit-button" onclick="editImage('image-1')">Editar Imagem</button>
         </div>
     </div>
 
     <div class="game-section">
-        <img src="cs_condition_zero.jpg" alt="Counter-Strike: Condition Zero">
+        <img src="cs_condition_zero.jpg" alt="Counter-Strike: Condition Zero" id="image-2">
         <div class="game-info">
             <h1>Counter-Strike: Condition Zero (2004)</h1>
             <p>Uma tentativa de adicionar uma campanha single-player e gráficos melhores. Apesar de não ter sido tão popular, trouxe algumas melhorias visuais e no modo online.</p>
+            <button class="edit-button" onclick="editImage('image-2')">Editar Imagem</button>
         </div>
     </div>
 
     <div class="game-section">
-        <img src="cs_source.jpg" alt="Counter-Strike: Source">
+        <img src="cs_source.jpg" alt="Counter-Strike: Source" id="image-3">
         <div class="game-info">
             <h1>Counter-Strike: Source (2004)</h1>
             <p>Uma reimaginação do jogo no motor gráfico Source Engine. Melhorou gráficos e física, mas não superou o sucesso da versão original nos cenários competitivos.</p>
+            <button class="edit-button" onclick="editImage('image-3')">Editar Imagem</button>
         </div>
     </div>
 
     <div class="game-section">
-        <img src="cs_go.jpg" alt="Counter-Strike: Global Offensive">
+        <img src="cs_go.jpg" alt="Counter-Strike: Global Offensive" id="image-4">
         <div class="game-info">
             <h1>Counter-Strike: Global Offensive (2012)</h1>
             <p>Uma versão que trouxe grandes melhorias gráficas, novas armas, mapas e o sistema de skins. Tornou-se a versão mais jogada até 2023 e consolidou o status do jogo nos eSports.</p>
+            <button class="edit-button" onclick="editImage('image-4')">Editar Imagem</button>
         </div>
     </div>
 
     <div class="game-section">
-        <img src="cs2_image.jpg" alt="Counter-Strike 2">
+        <img src="cs2_image.jpg" alt="Counter-Strike 2" id="image-5">
         <div class="game-info">
             <h1>Counter-Strike 2 (2023)</h1>
             <p>Atualização massiva lançada no motor Source 2, com gráficos realistas e melhorias em mecânicas de jogo, como granadas de fumaça dinâmicas. Foi uma evolução de CS:GO, mantendo a jogabilidade central e modernizando o visual.</p>
+            <button class="edit-button" onclick="editImage('image-5')">Editar Imagem</button>
         </div>
     </div>
 
 </section>
 
 <footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+
+<!-- Diálogo para editar a URL da imagem -->
+<div class="dialog-container" id="dialog-container">
+    <div class="dialog-box">
+        <h2>Editar Imagem</h2>
+        <input type="text" id="image-url" placeholder="Cole o link da imagem aqui" />
+        <button onclick="updateImage()">Atualizar Imagem</button>
+        <button onclick="closeDialog()">Cancelar</button>
+    </div>
+</div>
+
+<script>
+    let currentImageId = '';
+
+    // Função para abrir o diálogo de edição da imagem
+    function editImage(imageId) {
+        currentImageId = imageId;
+        const currentImageSrc = document.getElementById(imageId).src;
+        document.getElementById('image-url').value = currentImageSrc;
+        document.getElementById('dialog-container').style.display = 'flex';
+    }
+
+    // Função para atualizar a imagem com a URL fornecida
+    function updateImage() {
+        const newUrl = document.getElementById('image-url').value;
+        if (newUrl) {
+            document.getElementById(currentImageId).src = newUrl;
+            closeDialog();
+        } else {
+            alert('Por favor, insira um link válido.');
+        }
+    }
+
+    // Função para fechar o diálogo
+    function closeDialog() {
+        document.getElementById('dialog-container').style.display = 'none';
+    }
+</script>
 
 </body>
 </html>
