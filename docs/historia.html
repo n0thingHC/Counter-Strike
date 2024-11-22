@@ -166,7 +166,7 @@
         <div class="game-info">
             <h1>Criadores do Counter-Strike</h1>
             <p>Minh Le e Jess Cliffe foram os criadores iniciais deste fenômeno mundial...</p>
-            <button class="edit-button" onclick="addCreatorImage()">Adicionar Imagem dos Criadores</button>
+            <button class="edit-button" onclick="editImageLink('creatorsImage')">Adicionar Imagem</button>
         </div>
     </div>
 
@@ -175,7 +175,7 @@
         <div class="game-info">
             <h1>Counter-Strike 1.6 (2000)</h1>
             <p>A primeira versão oficial do mod lançado pela Valve...</p>
-            <button class="edit-button" onclick="editImageLink('cs16Image')">Alterar Imagem</button>
+            <button class="edit-button" onclick="editImageLink('cs16Image')">Adicionar Imagem</button>
         </div>
     </div>
 
@@ -184,7 +184,7 @@
         <div class="game-info">
             <h1>Counter-Strike: Condition Zero (2004)</h1>
             <p>Uma tentativa de adicionar uma campanha single-player...</p>
-            <button class="edit-button" onclick="editImageLink('csZeroImage')">Alterar Imagem</button>
+            <button class="edit-button" onclick="editImageLink('csZeroImage')">Adicionar Imagem</button>
         </div>
     </div>
 
@@ -193,7 +193,7 @@
         <div class="game-info">
             <h1>Counter-Strike: Source (2004)</h1>
             <p>Uma reimaginação do jogo no motor gráfico Source Engine...</p>
-            <button class="edit-button" onclick="editImageLink('csSourceImage')">Alterar Imagem</button>
+            <button class="edit-button" onclick="editImageLink('csSourceImage')">Adicionar Imagem</button>
         </div>
     </div>
 
@@ -202,7 +202,7 @@
         <div class="game-info">
             <h1>Counter-Strike: Global Offensive (2012)</h1>
             <p>Uma versão que trouxe grandes melhorias gráficas...</p>
-            <button class="edit-button" onclick="editImageLink('csGOImage')">Alterar Imagem</button>
+            <button class="edit-button" onclick="editImageLink('csGOImage')">Adicionar Imagem</button>
         </div>
     </div>
 
@@ -211,7 +211,7 @@
         <div class="game-info">
             <h1>Counter-Strike 2 (2023)</h1>
             <p>Atualização massiva lançada no motor Source 2...</p>
-            <button class="edit-button" onclick="editImageLink('cs2Image')">Alterar Imagem</button>
+            <button class="edit-button" onclick="editImageLink('cs2Image')">Adicionar Imagem</button>
         </div>
     </div>
 </section>
@@ -229,16 +229,6 @@
             document.getElementById(imageId).src = newImageUrl;
             // Armazenar a nova URL no Local Storage
             localStorage.setItem(imageId, newImageUrl);
-        }
-    }
-
-    // Função para adicionar imagem do criador
-    function addCreatorImage() {
-        const imageUrl = prompt("Insira o link da imagem do criador (ex: stage/images/criador.jpg):");
-        if (imageUrl) {
-            document.getElementById('creatorsImage').src = imageUrl;
-            // Armazenar a URL no Local Storage
-            localStorage.setItem('creatorsImage', imageUrl);
         }
     }
 

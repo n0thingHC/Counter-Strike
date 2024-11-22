@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<link rel="stylesheet" type="text/css" href="css.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css.css" media="screen" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>História do Counter-Strike</title>
@@ -54,20 +54,12 @@
         footer {
             margin-top: 20px;
         }
-        .image-button {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-        }
-        .image-button button {
-            margin-left: 10px;
-        }
     </style>
 </head>
 <body>
     <header>
         <img src="banner.jpeg" alt="Banner 1" height="90" width="1400">
-    </header>
+   </header>
 <nav>
     <ul>
         <li><a href="index.html">Início</a></li>
@@ -82,35 +74,54 @@
 </nav>
 <section>
     <h2>Objetivos do Jogo</h2>
-    <p>O objetivo do jogo varia dependendo do modo de jogo, mas geralmente envolve completar missões como desativar ou plantar uma bomba, <br>
-        resgatar reféns ou eliminar a equipe adversária. As equipes devem trabalhar juntas para alcançar seus objetivos enquanto tentam impedir a equipe oponente.
-    </p>
-    <ul>
-        <li><strong>Terroristas:</strong> Devem plantar a bomba em um dos bombsites e protegê-la até a explosão.</li>
-        <li><strong>Contra-Terroristas:</strong> Precisam impedir o plantio da bomba ou desarmá-la após o plantio.</li>
-    </ul>
-    
-    <div class="image-button">
-        <img src="CSGObombplant.jpg" alt="Terroristas plantando a bomba" width="300">
-        <button onclick="alert('Imagem representando Terroristas plantando a bomba')">Ver Detalhes</button>
-    </div>
+            <p>O objetivo do jogo varia dependendo do modo de jogo, mas geralmente envolve completar missões como desativar ou plantar uma bomba, <br>
+             resgatar reféns ou eliminar a equipe adversária. As equipes devem trabalhar juntas para alcançar seus objetivos enquanto tentam impedir a equipe oponente.
+            </p>
+            <ul>
+                <li><strong>Terroristas:</strong> Devem plantar a bomba em um dos bombsites e protegê-la até a explosão.</li>
+                <li><strong>Contra-Terroristas:</strong> Precisam impedir o plantio da bomba ou desarmá-la após o plantio.</li>
+            </ul>
+            
+            <!-- Imagem de Terroristas Plantando a Bomba -->
+            <img id="terroristasImage" src="CSGObombplant.jpg" alt="Terroristas plantando a bomba">
+            <button onclick="addImage('terroristasImage')">Adicionar Imagem de Terroristas</button>
 
-    <h3>Contra-Terroristas Desarmando a Bomba</h3>
-    <p>Após o plantio, o trabalho dos contra-terroristas é encontrar e desarmar a bomba antes que ela exploda.</p>
+            <h3>Contra-Terroristas Desarmando a Bomba</h3>
+            <p>Após o plantio, o trabalho dos contra-terroristas é encontrar e desarmar a bomba antes que ela exploda.</p>
 
-    <div class="image-button">
-        <img src="img/contra-terroristas.jpeg" alt="Contra-terroristas desarmando a bomba" width="300">
-        <button onclick="alert('Imagem representando Contra-Terroristas desarmando a bomba')">Ver Detalhes</button>
-    </div>
-
-    <h3>Modo de Jogo 5x5</h3>
-    <p>No modo 5x5, dois times competem com cinco jogadores em cada equipe. Este é o formato mais popular em competições profissionais.</p>
-    <ul>
-        <li><strong>Duração:</strong> 30 rodadas, com cada rodada durando até 2 minutos.</li>
-        <li><strong>Meta:</strong> O primeiro time a vencer 16 rodadas é declarado vencedor.</li>
-        <li><strong>Dinâmica:</strong> Os jogadores acumulam dinheiro a cada rodada para comprar armas e equipamentos, adicionando uma estratégia econômica ao jogo.</li>
-    </ul>
+            <!-- Imagem de Contra-Terroristas Desarmando a Bomba -->
+            <img id="contraTerroristasImage" src="img/contra-terroristas.jpeg" alt="Contra-terroristas desarmando a bomba">
+            <button onclick="addImage('contraTerroristasImage')">Adicionar Imagem de Contra-Terroristas</button>
 </section>
 <footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+
+<script>
+    // Função para adicionar a URL da imagem via prompt
+    function addImage(imageId) {
+        const imageUrl = prompt("Insira o link da nova imagem:");
+        if (imageUrl) {
+            document.getElementById(imageId).src = imageUrl;
+            // Salvar a URL da imagem no Local Storage
+            localStorage.setItem(imageId, imageUrl);
+        }
+    }
+
+    // Função para carregar as imagens salvas do Local Storage
+    function loadSavedImages() {
+        const terroristasImageUrl = localStorage.getItem('terroristasImage');
+        const contraTerroristasImageUrl = localStorage.getItem('contraTerroristasImage');
+
+        if (terroristasImageUrl) {
+            document.getElementById('terroristasImage').src = terroristasImageUrl;
+        }
+        if (contraTerroristasImageUrl) {
+            document.getElementById('contraTerroristasImage').src = contraTerroristasImageUrl;
+        }
+    }
+
+    // Carregar as imagens salvas quando a página for carregada
+    window.onload = loadSavedImages;
+</script>
+
 </body>
 </html>
