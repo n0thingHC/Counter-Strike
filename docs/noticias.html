@@ -6,42 +6,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notícias - Counter-Strike</title>
     <style>
-           
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, nav, footer {
+            background-color: white;
+            color: white;
+            padding: 0px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        section {
+            padding: 20px;
+        }
+        .news {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        .news-item {
+            display: flex;
+            flex-direction: column;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .news-item h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+        .news-item p {
+            font-size: 14px;
+            color: #555;
+        }
+        .news-item a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .news-item a:hover {
+            text-decoration: underline;
+        }
+        .news-item button {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .news-item button:hover {
+            background-color: #0056b3;
+        }
+        .news-item .delete-btn {
+            background-color: #dc3545;
+        }
+        .news-item .delete-btn:hover {
+            background-color: #c82333;
+        }
+        .add-news-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .add-news-btn:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
-	<header>
+    <header>
         <img src="banner.jpeg" alt="Banner 1" height="90" width="1400">
-   </header>
-<nav>
-    <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="historia.html">História</a></li>
-        <li><a href="como-funciona.html">Como Funciona</a></li>
-        <li><a href="campeonatos.html">Campeonatos</a></li>
-        <li><a href="ranking.html">Ranking</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="comunidade.html">Comunidade</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-    </ul>
-</nav>
-<section>
-    <h2>Notícias em Destaque</h2>
-    <ul>
-        <li>
-            <h3><a href="https://www.hltv.org/news/39947/official-s1mple-joins-falcons-on-loan">S1mple acerta retorno ao COMPETITIVO</a></h3>
-            <p>Jogador retorna ao cenário competitivo pela Falcons após um ano parado.</p>
-        </li>
-        <li>
-            <h3><a href="https://www.hltv.org/news/39949/blast-request-esic-investigation-into-astralis-emergency-substitution-for-blast-fall-final-tc">Astralis cria polêmica na Blast Dinamarca</a></h3>
-            <p>Equipe que joga o torneio em seu país inscreve jogador no meio da competição, capitões das outras equipes ameaçam protesto.</p>
-        </li>
-        <li>
-            <h3><a href="https://www.hltv.org/news/39658/valve-take-stance-against-snap-tap-like-features-remove-jump-throw-binds">Teclado "HACKER" é proibido pela desenvolvedora do jogo.</a></h3>
-            <p>Após muita pôlemica sobre o novo teclado gamer com auxilio "HACKER", valve proibe uso.</p>
-        </li>
-    </ul>
-</section>
-<footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="historia.html">História</a></li>
+            <li><a href="como-funciona.html">Como Funciona</a></li>
+            <li><a href="campeonatos.html">Campeonatos</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="noticias.html">Notícias</a></li>
+            <li><a href="comunidade.html">Comunidade</a></li>
+            <li><a href="galeria.html">Galeria</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Notícias em Destaque</h2>
+        
+        <div class="news" id="newsList">
+            <!-- Notícias existentes serão exibidas aqui -->
+            <div class="news-item">
+                <h3><a href="https://www.hltv.org/news/39947/official-s1mple-joins-falcons-on-loan">S1mple acerta retorno ao COMPETITIVO</a></h3>
+                <p>Jogador retorna ao cenário competitivo pela Falcons após um ano parado.</p>
+                <button onclick="editNews(this)">Editar</button>
+                <button class="delete-btn" onclick="deleteNews(this)">Excluir</button>
+            </div>
+            <div class="news-item">
+                <h3><a href="https://www.hltv.org/news/39949/blast-request-esic-investigation-into-astralis-emergency-substitution-for-blast-fall-final-tc">Astralis cria polêmica na Blast Dinamarca</a></h3>
+                <p>Equipe que joga o torneio em seu país inscreve jogador no meio da competição, capitões das outras equipes ameaçam protesto.</p>
+                <button onclick="editNews(this)">Editar</button>
+                <button class="delete-btn" onclick="deleteNews(this)">Excluir</button>
+            </div>
+            <div class="news-item">
+                <h3><a href="https://www.hltv.org/news/39658/valve-take-stance-against-snap-tap-like-features-remove-jump-throw-binds">Teclado "HACKER" é proibido pela desenvolvedora do jogo.</a></h3>
+                <p>Após muita pôlemica sobre o novo teclado gamer com auxilio "HACKER", valve proibe uso.</p>
+                <button onclick="editNews(this)">Editar</button>
+                <button class="delete-btn" onclick="deleteNews(this)">Excluir</button>
+            </div>
+        </div>
+
+        <button class="add-news-btn" onclick="addNews()">Adicionar Nova Notícia</button>
+    </section>
+    <footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+
+    <script>
+        // Função para adicionar uma nova notícia
+        function addNews() {
+            const title = prompt("Digite o título da notícia:");
+            const description = prompt("Digite a descrição da notícia:");
+            const link = prompt("Digite o link da notícia:");
+
+            if (title && description && link) {
+                const newsList = document.getElementById("newsList");
+
+                // Cria um novo item de notícia
+                const newNewsItem = document.createElement("div");
+                newNewsItem.classList.add("news-item");
+
+                // Cria o título da notícia com link
+                const newsTitle = document.createElement("h3");
+                const newsLink = document.createElement("a");
+                newsLink.href = link;
+                newsLink.textContent = title;
+                newsTitle.appendChild(newsLink);
+
+                // Cria a descrição da notícia
+                const newsDescription = document.createElement("p");
+                newsDescription.textContent = description;
+
+                // Cria o botão de editar
+                const editButton = document.createElement("button");
+                editButton.textContent = "Editar";
+                editButton.onclick = function() {
+                    editNews(editButton);
+                };
+
+                // Cria o botão de excluir
+                const deleteButton = document.createElement("button");
+                deleteButton.classList.add("delete-btn");
+                deleteButton.textContent = "Excluir";
+                deleteButton.onclick = function() {
+                    deleteNews(deleteButton);
+                };
+
+                // Adiciona os elementos criados ao item de notícia
+                newNewsItem.appendChild(newsTitle);
+                newNewsItem.appendChild(newsDescription);
+                newNewsItem.appendChild(editButton);
+                newNewsItem.appendChild(deleteButton);
+
+                // Adiciona o item de notícia à lista de notícias
+                newsList.appendChild(newNewsItem);
+            } else {
+                alert("Todos os campos são obrigatórios!");
+            }
+        }
+
+        // Função para editar uma notícia existente
+        function editNews(button) {
+            const newsItem = button.parentElement;
+            const titleElement = newsItem.querySelector("h3 a");
+            const descriptionElement = newsItem.querySelector("p");
+
+            const newTitle = prompt("Editar o título da notícia:", titleElement.textContent);
+            const newDescription = prompt("Editar a descrição da notícia:", descriptionElement.textContent);
+            const newLink = prompt("Editar o link da notícia:", titleElement.href);
+
+            if (newTitle && newDescription && newLink) {
+                titleElement.textContent = newTitle;
+                titleElement.href = newLink;
+                descriptionElement.textContent = newDescription;
+            } else {
+                alert("Todos os campos são obrigatórios para editar a notícia!");
+            }
+        }
+
+        // Função para excluir uma notícia existente
+        function deleteNews(button) {
+            const newsItem = button.parentElement;
+            newsItem.remove(); // Remove o item de notícia da página
+        }
+    </script>
 </body>
 </html>
