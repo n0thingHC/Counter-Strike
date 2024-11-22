@@ -4,7 +4,7 @@
 <link rel="stylesheet" type="text/css" href="css.css" media="screen" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>História do Counter-Strike</title>
+    <title>História do Counter-Strike 2</title>
     <style>
          body {
             font-family: Arial, sans-serif;
@@ -29,37 +29,31 @@
         section {
             padding: 20px;
         }
-        .carousel {
-            position: relative;
-            overflow: hidden;
-            height: 300px;
-        }
-        .carousel img {
-            width: 100%;
-            height: auto;
-        }
-        .news {
-            display: flex;
-            flex-direction: column;
-        }
-        .news-item {
-            display: flex;
-            margin: 10px 0;
-        }
-        .news-item img {
-            width: 100px;
-            height: auto;
-            margin-right: 10px;
-        }
         footer {
             margin-top: 20px;
         }
+        .image-button {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .image-button button {
+            margin-left: 10px;
+        }
     </style>
+    <script>
+        function changeImage(imgElement) {
+            const newUrl = prompt("Insira o link para a nova imagem:");
+            if (newUrl) {
+                imgElement.src = newUrl;
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
         <img src="banner.jpeg" alt="Banner 1" height="90" width="1400">
-   </header>
+    </header>
 <nav>
     <ul>
         <li><a href="index.html">Início</a></li>
@@ -74,23 +68,41 @@
 </nav>
 <section>
     <h2>Objetivos do Jogo</h2>
-            <p>O objetivo do jogo varia dependendo do modo de jogo, mas geralmente envolve completar missões como desativar ou plantar uma bomba, <br>
-             resgatar reféns ou eliminar a equipe adversária. As equipes devem trabalhar juntas para alcançar seus objetivos enquanto tentam impedir a equipe oponente.
-            </p>
+    <p>O objetivo do jogo varia dependendo do modo de jogo, mas geralmente envolve completar missões como desativar ou plantar uma bomba, <br>
+        resgatar reféns ou eliminar a equipe adversária. As equipes devem trabalhar juntas para alcançar seus objetivos enquanto tentam impedir a equipe oponente.
+    </p>
+    <ul>
+        <li><strong>Terroristas:</strong> Devem plantar a bomba em um dos bombsites e protegê-la até a explosão.</li>
+        <li><strong>Contra-Terroristas:</strong> Precisam impedir o plantio da bomba ou desarmá-la após o plantio.</li>
+    </ul>
+    
+    <div class="image-button">
+        <img src="CSGObombplant.jpg" alt="Terroristas plantando a bomba" width="300">
+        <button onclick="changeImage(this.previousElementSibling)">Alterar Imagem</button>
+    </div>
+
+    <h3>Contra-Terroristas Desarmando a Bomba</h3>
+    <p>Após o plantio, o trabalho dos contra-terroristas é encontrar e desarmar a bomba antes que ela exploda.</p>
+
+    <div class="image-button">
+        <img src="img/contra-terroristas.jpeg" alt="Contra-terroristas desarmando a bomba" width="300">
+        <button onclick="changeImage(this.previousElementSibling)">Alterar Imagem</button>
+    </div>
+
+    <h3>Modo de Jogo 5x5</h3>
+    <p>No **Counter-Strike 2 (CS2)**, o formato principal do modo competitivo segue a estrutura 5x5, com algumas mudanças importantes:</p>
+    <ul>
+        <li><strong>Duração:</strong> Cada partida tem 13 rodadas por metade, e o time que vencer 13 rodadas primeiro é declarado vencedor.</li>
+        <li><strong>Prorrogação:</strong> Caso ambos os times empatem com 12 rodadas, uma prorrogação ocorre, composta por 6 rodadas adicionais (3 para cada lado).</li>
+        <li><strong>Condições de vitória:</strong> 
             <ul>
-                <li><strong>Terroristas:</strong> Devem plantar a bomba em um dos bombsites e protegê-la até a explosão.</li>
-                <li><strong>Contra-Terroristas:</strong> Precisam impedir o plantio da bomba ou desarmá-la após o plantio.</li>
+                <li>Se a bomba não for plantada dentro do tempo da rodada, o time que eliminar os 5 jogadores adversários vence.</li>
+                <li>Se a bomba for plantada, a rodada é decidida por explosão ou desarme da bomba.</li>
             </ul>
-            
-            <!-- Imagem de Terroristas Plantando a Bomba -->
-            <img src="CSGObombplant.jpg" alt="Terroristas plantando a bomba">
-
-            <h3>Contra-Terroristas Desarmando a Bomba</h3>
-            <p>Após o plantio, o trabalho dos contra-terroristas é encontrar e desarmar a bomba antes que ela exploda.</p>
-
-            <!-- Imagem de Contra-Terroristas Desarmando a Bomba -->
-            <img src="img/contra-terroristas.jpeg" alt="Contra-terroristas desarmando a bomba">
+        </li>
+        <li><strong>Dinâmica Econômica:</strong> Os jogadores acumulam dinheiro a cada rodada, sendo recompensados por ações como plantações de bombas, eliminações e vitórias.</li>
+    </ul>
 </section>
-<footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+<footer><p>&copy; 2024 História do Counter-Strike 2. Todos os direitos reservados.</p></footer>
 </body>
 </html>

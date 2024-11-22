@@ -77,18 +77,19 @@
         }
 
         .edit-button {
-            background-color: #007bff;
+            background-color: #28a745;
             color: white;
-            padding: 5px 10px;
+            padding: 8px 15px;
             border: none;
             cursor: pointer;
             font-size: 14px;
             border-radius: 5px;
             margin-top: 10px;
+            transition: background-color 0.3s;
         }
 
         .edit-button:hover {
-            background-color: #0056b3;
+            background-color: #218838;
         }
 
         footer {
@@ -110,6 +111,7 @@
             background-color: rgba(0, 0, 0, 0.5);
             justify-content: center;
             align-items: center;
+            z-index: 1000;
         }
 
         .dialog-box {
@@ -135,12 +137,20 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin: 5px;
         }
 
         .dialog-box button:hover {
             background-color: #0056b3;
         }
 
+        .dialog-box button.cancel-button {
+            background-color: #dc3545;
+        }
+
+        .dialog-box button.cancel-button:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 <body>
@@ -210,7 +220,6 @@
             <button class="edit-button" onclick="editImage('image-5')">Editar Imagem</button>
         </div>
     </div>
-
 </section>
 
 <footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
@@ -218,10 +227,10 @@
 <!-- Diálogo para editar a URL da imagem -->
 <div class="dialog-container" id="dialog-container">
     <div class="dialog-box">
-        <h2>Imagem</h2>
+        <h2>Editar URL da Imagem</h2>
         <input type="text" id="image-url" placeholder="Cole o link da imagem aqui" />
-        <button onclick="updateImage()">Atualizar Imagem</button>
-        <button onclick="closeDialog()">Cancelar</button>
+        <button onclick="updateImage()">Salvar</button>
+        <button class="cancel-button" onclick="closeDialog()">Cancelar</button>
     </div>
 </div>
 
