@@ -1,18 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="stylesheet" type="text/css" href="css.css" media="screen" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria - Counter-Strike</title>
     <style>
-        
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header img {
+            width: 100%;
+            height: auto;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background-color: #007BFF;
+            overflow: hidden;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background-color: #0056b3;
+        }
+        section {
+            padding: 20px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        figure {
+            margin: 0;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+        img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        figcaption {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="banner.jpeg" alt="Banner 1" height="90" width="1400">
-   </header>
+        <img src="banner.jpeg" alt="Banner">
+    </header>
     <nav>
         <ul>
             <li><a href="index.html">Início</a></li>
@@ -23,61 +92,71 @@
             <li><a href="noticias.html">Notícias</a></li>
             <li><a href="comunidade.html">Comunidade</a></li>
             <li><a href="galeria.html">Galeria</a></li>
-            <li><a href="hamburguer.html">Hamburguer</a></li>
         </ul>
     </nav>
     <section>
         <h2>Galeria de Imagens</h2>
-        <div class="gallery">
-            <figure>
-                <img src="imagem1.jpeg" alt="Imagem 1">
-                <figcaption>ESL One Cologne 2016 - Braziliam Champion Major</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem2.jpeg" alt="Imagem 2">
-                <figcaption>Major Columbus 2016</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem3.jpeg" alt="Imagem 3">
-                <figcaption>BLAST Premier Fall Final 2024</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem4.jpeg" alt="Imagem 4">
-                <figcaption>BetBoom Dacha Belgrade Season 2</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem5.jpeg" alt="Imagem 5">
-                <figcaption>PGL Major Antwerp 2022</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem6.jpeg" alt="Imagem 6">
-                <figcaption>ESL One Cologne em 2019</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem7.jpeg" alt="Imagem 7">
-                <figcaption>Major Rio de janeiro 2022</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem8.jpeg" alt="Imagem 8">
-                <figcaption>Major de Copenhagen 2024</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem9.jpeg" alt="Imagem 9">
-                <figcaption>HLTV Award Show 2023</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem10.jpeg" alt="Imagem 10">
-                <figcaption>HLTV Award Show 2023</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem11.jpeg" alt="Imagem 11">
-                <figcaption>HLTV Award Show 2023</figcaption>
-            </figure>
-            <figure>
-                <img src="imagem12.jpeg" alt="Imagem 12">
-                <figcaption>HLTV Award Show 2023</figcaption>
-            </figure>
-        </div>
+        <button onclick="addImage()">Adicionar Imagem</button>
+        <div class="gallery" id="gallery-container"></div>
     </section>
+    <footer>
+        <p>&copy; 2024 Counter-Strike. Todos os direitos reservados.</p>
+    </footer>
+    <script>
+        // Carregar imagens do LocalStorage
+        let images = JSON.parse(localStorage.getItem("images")) || [];
+
+        function saveImages() {
+            localStorage.setItem("images", JSON.stringify(images));
+        }
+
+        function renderGallery() {
+            const galleryContainer = document.getElementById("gallery-container");
+            galleryContainer.innerHTML = "";
+
+            images.forEach((image, index) => {
+                const figure = document.createElement("figure");
+                figure.innerHTML = `
+                    <img src="${image.url}" alt="Imagem ${index + 1}" onclick="editImage(${index})">
+                    <figcaption>${image.caption}</figcaption>
+                    <button onclick="removeImage(${index})">Remover</button>
+                `;
+                galleryContainer.appendChild(figure);
+            });
+        }
+
+        function addImage() {
+            const url = prompt("Insira o URL da imagem:");
+            const caption = prompt("Insira a legenda da imagem:");
+
+            if (url && caption) {
+                images.push({ url, caption });
+                saveImages();
+                renderGallery();
+            }
+        }
+
+        function editImage(index) {
+            const newUrl = prompt("Insira o novo URL da imagem:", images[index].url);
+            const newCaption = prompt("Insira a nova legenda da imagem:", images[index].caption);
+
+            if (newUrl) images[index].url = newUrl;
+            if (newCaption) images[index].caption = newCaption;
+
+            saveImages();
+            renderGallery();
+        }
+
+        function removeImage(index) {
+            if (confirm("Tem certeza de que deseja remover esta imagem?")) {
+                images.splice(index, 1);
+                saveImages();
+                renderGallery();
+            }
+        }
+
+        // Renderizar a galeria ao carregar a página
+        renderGallery();
+    </script>
 </body>
 </html>

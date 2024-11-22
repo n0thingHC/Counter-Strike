@@ -4,57 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A História do Counter-Strike</title>
+    <link rel="stylesheet" type="text/css" href="css.css" media="screen" />
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        /* Cabeçalho */
+        #header-placeholder {
+            margin-bottom: 20px;
+        }
+
+        /* Seção principal */
+        section {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+
+        .news {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: nowrap; /* Evita quebra para a linha de baixo */
+            overflow-x: auto; /* Permite rolar horizontalmente em telas menores */
+        }
+
+        /* Notícia */
+        .news-item {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 30%; /* Cada notícia ocupa 30% da largura */
+            transition: transform 0.3s;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 300px; /* Altura fixa para manter o layout consistente */
+            overflow: hidden;
+        }
+
+        .news-item img {
+            width: 100%;
+            height: 150px; /* Altura fixa para as imagens */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .news-item h3 {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .news-item p {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            flex-grow: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Limita a legenda a 3 linhas */
+            -webkit-box-orient: vertical;
+        }
+
+        .news-item .edit-button {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .news-item:hover .edit-button {
+            display: block;
+        }
+
+        /* Estilos Responsivos */
+        @media (max-width: 768px) {
+            .news-item {
+                width: 100%; /* Fica em uma coluna única em telas pequenas */
+                height: auto; /* Deixa a altura dinâmica */
+            }
+
+            .news {
+                flex-wrap: wrap; /* Permite que as notícias quebrem para a linha de baixo em telas pequenas */
+            }
+        }
+    </style>
 </head>
-<link rel="stylesheet" type="text/css" href="css.css" media="screen" />
 <body>
 
-<header>
-     <img src="banner.jpeg" alt="Banner 1" height="90" width="1400">
-</header>
+    <!-- Div para carregar o cabeçalho -->
+    <div id="header-placeholder"></div>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="historia.html">História</a></li>
-        <li><a href="como-funciona.html">Como Funciona</a></li>
-        <li><a href="campeonatos.html">Campeonatos</a></li>
-        <li><a href="ranking.html">Ranking</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="comunidade.html">Comunidade</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-		 <li><a href="formulario.html">Formulario</a></li>
-    </ul>
-</nav>
-
-<section>
-    <div class="carousel">
-        <img src="banner1.jpeg" alt="Banner 1">
-        <!-- Adicione mais imagens e lógica para o carousel aqui -->
-    </div>
-    <div class="news">
-        <h2>Notícias em Destaque</h2>
-        <div class="news-item">
-            <img src="noticia1.jpeg" alt="Notícia 1">
-            <div>
-                <h3><a href="https://www.hltv.org/news/39947/official-s1mple-joins-falcons-on-loan">S1mple acerta retorno ao COMPETITIVO</a></h3>
-                <p>Jogador retorna ao cenário competitivo pela Falcons após um ano parado</p>
-            </div>
+    <!-- Seção principal -->
+    <section>
+        <div class="carousel">
+            <img src="banner1.jpeg" alt="Banner 1">
+            <!-- Adicione mais imagens e lógica para o carousel aqui -->
         </div>
-        <div class="news-item">
-            <img src="noticia2.jpeg" alt="Notícia 2">
-            <div>
-                <h3><a href="https://www.hltv.org/news/39949/blast-request-esic-investigation-into-astralis-emergency-substitution-for-blast-fall-final-tc">Astralis cria polêmica na Blast Dinamarca</a></h3>
-                <p>Equipe que joga o torneio em seu país inscreve jogador no meio da competição, capitões das outras equipes ameaçam protesto</p>
-            </div>
-        </div>
-        <!-- Adicione mais itens de notícias se necessário -->
-    </div>
-</section>
+        <div class="news">
+            <h2>Notícias em Destaque</h2>
 
-<footer>
-    <p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p>
-</footer>
+            <!-- Notícia 1 -->
+            <div class="news-item" onclick="alterarNoticia(this)">
+                <img src="noticia1.jpeg" alt="Notícia 1">
+                <div>
+                    <h3><a href="https://www.hltv.org/news/39947/official-s1mple-joins-falcons-on-loan" class="news-link">S1mple acerta retorno ao COMPETITIVO</a></h3>
+                    <p>Jogador retorna ao cenário competitivo pela Falcons após um ano parado</p>
+                </div>
+                <button class="edit-button" onclick="editarNoticia(event, this)">Editar</button>
+            </div>
+
+            <!-- Notícia 2 -->
+            <div class="news-item" onclick="alterarNoticia(this)">
+                <img src="noticia2.jpeg" alt="Notícia 2">
+                <div>
+                    <h3><a href="https://www.hltv.org/news/39949/blast-request-esic-investigation-into-astralis-emergency-substitution-for-blast-fall-final-tc" class="news-link">Astralis cria polêmica na Blast Dinamarca</a></h3>
+                    <p>Equipe que joga o torneio em seu país inscreve jogador no meio da competição, capitões das outras equipes ameaçam protesto</p>
+                </div>
+                <button class="edit-button" onclick="editarNoticia(event, this)">Editar</button>
+            </div>
+
+            <!-- Notícia 3 -->
+            <div class="news-item" onclick="alterarNoticia(this)">
+                <img src="noticia3.jpeg" alt="Notícia 3">
+                <div>
+                    <h3><a href="https://www.hltv.org/news/39950/novo-time-de-cs-do-mibr" class="news-link">MIBR anuncia novo time de CS</a></h3>
+                    <p>Organização revela sua nova line-up para os campeonatos de CS:GO</p>
+                </div>
+                <button class="edit-button" onclick="editarNoticia(event, this)">Editar</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Script para carregar o cabeçalho -->
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header-placeholder').innerHTML = data);
+
+        // Função para alterar a notícia em destaque
+        function alterarNoticia(elemento) {
+            // Recupera os dados da notícia clicada
+            const imagem = elemento.querySelector('img').src;
+            const titulo = elemento.querySelector('h3 a').textContent;
+            const link = elemento.querySelector('h3 a').href;
+            const legenda = elemento.querySelector('p').textContent;
+
+            // Altera a notícia em destaque
+            const noticiaEmDestaque = document.querySelector('.news .highlighted');
+            if (noticiaEmDestaque) {
+                noticiaEmDestaque.classList.remove('highlighted');
+            }
+
+            elemento.classList.add('highlighted');
+            
+            // Atualiza os dados da notícia em destaque
+            const destaqueTitulo = document.querySelector('#destaque-titulo');
+            const destaqueImagem = document.querySelector('#destaque-imagem');
+            const destaqueLegenda = document.querySelector('#destaque-legenda');
+            const destaqueLink = document.querySelector('#destaque-link');
+
+            destaqueTitulo.textContent = titulo;
+            destaqueImagem.src = imagem;
+            destaqueLegenda.textContent = legenda;
+            destaqueLink.href = link;
+        }
+
+        // Função para editar a notícia
+        function editarNoticia(event, elemento) {
+            event.stopPropagation(); // Impede que o clique na notícia dispare a função alterarNoticia
+
+            const noticiaItem = elemento.closest('.news-item');
+            const titulo = noticiaItem.querySelector('h3 a');
+            const legenda = noticiaItem.querySelector('p');
+            const img = noticiaItem.querySelector('img');
+
+            const novoTitulo = prompt("Novo título:", titulo.textContent);
+            const novaLegenda = prompt("Nova legenda:", legenda.textContent);
+            const novaImagem = prompt("Nova URL da imagem:", img.src);
+            const novoLink = prompt("Novo link do título:", titulo.href);
+
+            if (novoTitulo) titulo.textContent = novoTitulo;
+            if (novaLegenda) legenda.textContent = novaLegenda;
+            if (novaImagem) img.src = novaImagem;
+            if (novoLink) titulo.href = novoLink;
+        }
+    </script>
 
 </body>
 </html>
-
