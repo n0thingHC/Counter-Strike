@@ -40,8 +40,7 @@
             display: flex;
             justify-content: space-between;
             gap: 15px;
-            flex-wrap: nowrap; /* Evita quebra para a linha de baixo */
-            overflow-x: auto; /* Permite rolar horizontalmente em telas menores */
+            flex-wrap: wrap; /* Permite quebra para telas menores */
         }
 
         /* Notícia */
@@ -50,18 +49,18 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            width: 30%; /* Cada notícia ocupa 30% da largura */
+            width: 30%;
             transition: transform 0.3s;
             position: relative;
             display: flex;
             flex-direction: column;
-            height: 300px; /* Altura fixa para manter o layout consistente */
-            overflow: hidden;
+            height: auto;
+            margin-bottom: 20px;
         }
 
         .news-item img {
             width: 100%;
-            height: 150px; /* Altura fixa para as imagens */
+            height: 150px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 10px;
@@ -82,11 +81,17 @@
             -webkit-box-orient: vertical;
         }
 
-        .news-item .edit-button {
-            display: none;
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        /* Contêiner para os botões */
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: flex-end;
+            margin-top: 15px;
+        }
+
+        .news-item .edit-button,
+        .news-item .delete-button {
             background-color: rgba(0, 0, 0, 0.6);
             color: white;
             padding: 5px 10px;
@@ -94,19 +99,14 @@
             cursor: pointer;
         }
 
-        .news-item:hover .edit-button {
-            display: block;
+        .news-item:hover {
+            transform: translateY(-5px);
         }
 
         /* Estilos Responsivos */
         @media (max-width: 768px) {
             .news-item {
-                width: 100%; /* Fica em uma coluna única em telas pequenas */
-                height: auto; /* Deixa a altura dinâmica */
-            }
-
-            .news {
-                flex-wrap: wrap; /* Permite que as notícias quebrem para a linha de baixo em telas pequenas */
+                width: 100%; /* Faz com que as notícias fiquem em uma coluna em telas menores */
             }
         }
     </style>
@@ -120,42 +120,11 @@
     <section>
         <div class="carousel">
             <img src="banner1.jpeg" alt="Banner 1">
-            <!-- Adicione mais imagens e lógica para o carousel aqui -->
         </div>
-        <div class="news">
-            <h2>Notícias em Destaque</h2>
 
-            <!-- Notícia 1 -->
-            <div class="news-item" onclick="alterarNoticia(this)">
-                <img src="noticia1.jpeg" alt="Notícia 1">
-                <div>
-                    <h3><a href="https://www.hltv.org/news/39947/official-s1mple-joins-falcons-on-loan" class="news-link">S1mple acerta retorno ao COMPETITIVO</a></h3>
-                    <p>Jogador retorna ao cenário competitivo pela Falcons após um ano parado</p>
-                </div>
-                <button class="edit-button" onclick="editarNoticia(event, this)">Editar</button>
-            </div>
+        <h2>Notícias em Destaque</h2>
 
-            <!-- Notícia 2 -->
-            <div class="news-item" onclick="alterarNoticia(this)">
-                <img src="noticia2.jpeg" alt="Notícia 2">
-                <div>
-                    <h3><a href="https://www.hltv.org/news/39949/blast-request-esic-investigation-into-astralis-emergency-substitution-for-blast-fall-final-tc" class="news-link">Astralis cria polêmica na Blast Dinamarca</a></h3>
-                    <p>Equipe que joga o torneio em seu país inscreve jogador no meio da competição, capitões das outras equipes ameaçam protesto</p>
-                </div>
-                <button class="edit-button" onclick="editarNoticia(event, this)">Editar</button>
-            </div>
-
-            <!-- Notícia 3 -->
-            <div class="news-item" onclick="alterarNoticia(this)">
-                <img src="noticia3.jpeg" alt="Notícia 3">
-                <div>
-                    <h3><a href="https://www.hltv.org/news/39950/novo-time-de-cs-do-mibr" class="news-link">MIBR anuncia novo time de CS</a></h3>
-                    <p>Organização revela sua nova line-up para os campeonatos de CS:GO</p>
-                </div>
-                <button class="edit-button" onclick="editarNoticia(event, this)">Editar</button>
-            </div>
-
-        </div>
+        <div class="news" id="news-container"></div>
     </section>
 
     <footer>
@@ -164,57 +133,98 @@
 
     <!-- Script para carregar o cabeçalho -->
     <script>
+        // Carregar o cabeçalho
         fetch('header.html')
             .then(response => response.text())
             .then(data => document.getElementById('header-placeholder').innerHTML = data);
 
-        // Função para alterar a notícia em destaque
-        function alterarNoticia(elemento) {
-            // Recupera os dados da notícia clicada
-            const imagem = elemento.querySelector('img').src;
-            const titulo = elemento.querySelector('h3 a').textContent;
-            const link = elemento.querySelector('h3 a').href;
-            const legenda = elemento.querySelector('p').textContent;
+        // Função para carregar as notícias do localStorage
+        function carregarNoticias() {
+            const noticiasSalvas = JSON.parse(localStorage.getItem('noticias'));
+            const newsContainer = document.getElementById('news-container');
+            newsContainer.innerHTML = ''; // Limpa as notícias atuais
 
-            // Altera a notícia em destaque
-            const noticiaEmDestaque = document.querySelector('.news .highlighted');
-            if (noticiaEmDestaque) {
-                noticiaEmDestaque.classList.remove('highlighted');
+            if (noticiasSalvas) {
+                noticiasSalvas.forEach((noticia, index) => {
+                    const noticiaDiv = document.createElement('div');
+                    noticiaDiv.classList.add('news-item');
+                    noticiaDiv.innerHTML = `
+                        <img src="${noticia.imagem}" alt="Notícia ${index + 1}">
+                        <div>
+                            <h3><a href="${noticia.link}" class="news-link">${noticia.titulo}</a></h3>
+                            <p>${noticia.legenda}</p>
+                        </div>
+                        <div class="button-container">
+                            <button class="edit-button" onclick="editarNoticia(event, ${index})">Editar</button>
+                            <button class="delete-button" onclick="removerNoticia(event, ${index})">Excluir</button>
+                        </div>
+                    `;
+                    newsContainer.appendChild(noticiaDiv);
+                });
             }
-
-            elemento.classList.add('highlighted');
-            
-            // Atualiza os dados da notícia em destaque
-            const destaqueTitulo = document.querySelector('#destaque-titulo');
-            const destaqueImagem = document.querySelector('#destaque-imagem');
-            const destaqueLegenda = document.querySelector('#destaque-legenda');
-            const destaqueLink = document.querySelector('#destaque-link');
-
-            destaqueTitulo.textContent = titulo;
-            destaqueImagem.src = imagem;
-            destaqueLegenda.textContent = legenda;
-            destaqueLink.href = link;
         }
 
-        // Função para editar a notícia
-        function editarNoticia(event, elemento) {
-            event.stopPropagation(); // Impede que o clique na notícia dispare a função alterarNoticia
+        // Função para editar notícia
+        function editarNoticia(event, index) {
+            event.stopPropagation(); // Impede a propagação do clique para evitar erro de duplicação
 
-            const noticiaItem = elemento.closest('.news-item');
-            const titulo = noticiaItem.querySelector('h3 a');
-            const legenda = noticiaItem.querySelector('p');
-            const img = noticiaItem.querySelector('img');
+            const noticiasSalvas = JSON.parse(localStorage.getItem('noticias'));
+            const noticia = noticiasSalvas[index];
 
-            const novoTitulo = prompt("Novo título:", titulo.textContent);
-            const novaLegenda = prompt("Nova legenda:", legenda.textContent);
-            const novaImagem = prompt("Nova URL da imagem:", img.src);
-            const novoLink = prompt("Novo link do título:", titulo.href);
+            const novoTitulo = prompt("Novo título:", noticia.titulo);
+            const novaLegenda = prompt("Nova legenda:", noticia.legenda);
+            const novaImagem = prompt("Nova URL da imagem:", noticia.imagem);
+            const novoLink = prompt("Novo link do título:", noticia.link);
 
-            if (novoTitulo) titulo.textContent = novoTitulo;
-            if (novaLegenda) legenda.textContent = novaLegenda;
-            if (novaImagem) img.src = novaImagem;
-            if (novoLink) titulo.href = novoLink;
+            if (novoTitulo) noticia.titulo = novoTitulo;
+            if (novaLegenda) noticia.legenda = novaLegenda;
+            if (novaImagem) noticia.imagem = novaImagem;
+            if (novoLink) noticia.link = novoLink;
+
+            // Salva as mudanças no localStorage
+            localStorage.setItem('noticias', JSON.stringify(noticiasSalvas));
+            carregarNoticias(); // Recarrega as notícias
         }
+
+        // Função para excluir notícia
+        function removerNoticia(event, index) {
+            event.stopPropagation();
+
+            const noticiasSalvas = JSON.parse(localStorage.getItem('noticias'));
+            noticiasSalvas.splice(index, 1); // Remove a notícia no índice especificado
+
+            // Salva novamente no localStorage
+            localStorage.setItem('noticias', JSON.stringify(noticiasSalvas));
+            carregarNoticias(); // Recarrega as notícias
+        }
+
+        // Função para adicionar nova notícia
+        function adicionarNoticia() {
+            const titulo = prompt("Título da notícia:");
+            const legenda = prompt("Legenda da notícia:");
+            const imagem = prompt("URL da imagem:");
+            const link = prompt("Link da notícia:");
+
+            if (titulo && legenda && imagem && link) {
+                const noticiasSalvas = JSON.parse(localStorage.getItem('noticias')) || [];
+                noticiasSalvas.push({ titulo, legenda, imagem, link });
+
+                // Salva no localStorage
+                localStorage.setItem('noticias', JSON.stringify(noticiasSalvas));
+                carregarNoticias(); // Recarrega as notícias
+            }
+        }
+
+        // Carrega as notícias ao iniciar a página
+        carregarNoticias();
+
+        // Função para carregar as notícias automaticamente
+        window.onload = function () {
+            const adicionarButton = document.createElement('button');
+            adicionarButton.textContent = 'Adicionar Notícia';
+            adicionarButton.onclick = adicionarNoticia;
+            document.body.appendChild(adicionarButton);
+        };
     </script>
 
 </body>
