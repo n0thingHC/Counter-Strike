@@ -1,140 +1,143 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
-    <link rel="stylesheet" type="text/css" href="css.css" media="screen" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>História do Counter-Strike</title>
-         
+    <title>História do Jogo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-<header>
-    <!-- Cabeçalho restaurado com o banner -->
-    <img src="banner.jpeg" alt="Banner do site">
-</header>
+    <!-- Cabeçalho -->
+    <header class="bg-warning py-3 d-flex justify-content-between align-items-center">
+        <!-- Botão de Menu (Lado Esquerdo) -->
+        <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+            <i class="bi bi-list"></i> Menu
+        </button>
+        
+        <!-- Imagem do Banner (Centralizado) -->
+        <div class="mx-auto">
+            <img src="banner.jpeg" alt="Banner InfoStrike" class="img-fluid">
+        </div>
+        
+        <!-- Botão de Alternar Tema (Lado Direito) -->
+        <button id="dark-mode-toggle" class="btn btn-dark">
+            <i class="bi bi-moon-fill"></i>Tema
+        </button>
+    </header>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="historia.html">História</a></li>
-        <li><a href="como-funciona.html">Como Funciona</a></li>
-        <li><a href="campeonatos.html">Campeonatos</a></li>
-        <li><a href="ranking.html">Ranking</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="comunidade.html">Comunidade</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-    </ul>
-</nav>
-
-<section>
-    
-    <h1>Origem do Counter-Strike</h1>
-   
-    <!-- Seção dos criadores do Counter-Strike -->
-    <div class="game-section">
-        <img id="creatorsImage" src="stage/images/criadores.jpg" alt="Criadores do Counter-Strike">
-        <div class="game-info">
-            <h1>Criadores do Counter-Strike</h1>
-            <p>Minh Le e Jess Cliffe foram os criadores iniciais deste fenômeno mundial...</p>
-            <button class="edit-button" onclick="editImageLink('creatorsImage')">Adicionar Imagem</button>
+    <!-- Menu Lateral -->
+    <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 id="sidebarLabel" class="text-dark">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li><a href="index.html" class="text-dark"><i class="bi bi-house-fill"></i> Home</a></li>
+                <li><a href="historia.html" class="text-dark"><i class="bi bi-book"></i> História</a></li>
+                <li><a href="modos.html" class="text-dark"><i class="bi bi-controller"></i> Modos de Jogo</a></li>
+                <li><a href="campeonatos.html" class="text-dark"><i class="bi bi-trophy-fill"></i> Campeonatos</a></li>
+                <li><a href="mapas.html" class="text-dark"><i class="bi bi-map"></i> Mapas</a></li>
+                <li><a href="armas.html" class="text-dark"><i class="bi bi-crosshair"></i> Armas</a></li>
+                <li><a href="comunidade.html" class="text-dark"><i class="bi bi-people-fill"></i> Comunidade</a></li>
+                <li><a href="contato.html" class="text-dark"><i class="bi bi-envelope"></i> Contato</a></li>
+                <li><a href="noticias.html" class="text-dark"><i class="bi bi-newspaper"></i> Noticias</a></li>
+                <li><a href="ranking.html" class="text-dark"><i class="bi bi-graph-up-arrow"></i> Ranking</a></li>
+                <li><a href="galeria.html" class="text-dark"><i class="bi bi-card-image"></i> Galeria</a></li>
+                <li><a href="como-funciona.html" class="text-dark"><i class="bi bi-card-image"></i> Como Funciona</a></li>
+            </ul>
         </div>
     </div>
 
-    <div class="game-section">
-        <img id="cs16Image" src="stage/images/cs1.6_image.jpg" alt="Counter-Strike 1.6">
-        <div class="game-info">
-            <h1>Counter-Strike 1.6 (2000)</h1>
-            <p>A primeira versão oficial do mod lançado pela Valve...</p>
-            <button class="edit-button" onclick="editImageLink('cs16Image')">Adicionar Imagem</button>
-        </div>
-    </div>
+    <!-- Conteúdo Principal -->
+    <main class="container mt-3">
+        <h1 class="text-center">História do Counter-Strike</h1>
+        
+        <div class="conteudo-barrado"></div>   
+        
+        <h2>De Mod a Fenômeno</h2>
+        <p>
+            Em 1999, Counter-Strike começou como um <em>mod</em> (modificação) do jogo <strong>Half-Life</strong>, criado por dois estudantes: Minh "Gooseman" Le e Jess Cliffe.
+        </p>
+        <p>
+            Eles queriam criar um jogo tático de tiro em equipe que simulasse cenários realistas de combate entre terroristas e contra-terroristas. O <em>mod</em> era gratuito e rapidamente ganhou popularidade pela jogabilidade única e viciante.
+        </p>
+        <p>
+            Em 2000, a Valve (criadora de <em>Half-Life</em>) percebeu o potencial do <em>mod</em> e contratou os criadores, lançando o <strong>Counter-Strike 1.0</strong> como um jogo completo.
+        </p>
 
-    <div class="game-section">
-        <img id="csZeroImage" src="stage/images/cs_condition_zero.jpg" alt="Counter-Strike: Condition Zero">
-        <div class="game-info">
-            <h1>Counter-Strike: Condition Zero (2004)</h1>
-            <p>Uma tentativa de adicionar uma campanha single-player...</p>
-            <button class="edit-button" onclick="editImageLink('csZeroImage')">Adicionar Imagem</button>
-        </div>
-    </div>
+        <h2>A Ascensão do Counter-Strike</h2>
+        <p>
+            Nos anos 2000, Counter-Strike tornou-se um marco nos jogos multiplayer, especialmente com a versão <strong>1.6</strong> (lançada em 2003), que consolidou o formato clássico:
+        </p>
+        <ul>
+            <li><strong>Modos de Jogo:</strong> Resgate de reféns, desarmar bombas e assassinatos.</li>
+            <li><strong>Mapas Icônicos:</strong> Dust2, Inferno, Nuke e Train.</li>
+            <li><strong>Gameplay Tático:</strong> Recompensas econômicas baseadas no desempenho do time e mecânicas de mira precisas.</li>
+        </ul>
+        <p>
+            O CS virou febre em <em>LAN houses</em> no mundo inteiro, especialmente no Brasil, onde competições e a cultura de LAN criaram legiões de fãs.
+        </p>
 
-    <div class="game-section">
-        <img id="csSourceImage" src="stage/images/cs_source.jpg" alt="Counter-Strike: Source">
-        <div class="game-info">
-            <h1>Counter-Strike: Source (2004)</h1>
-            <p>Uma reimaginação do jogo no motor gráfico Source Engine...</p>
-            <button class="edit-button" onclick="editImageLink('csSourceImage')">Adicionar Imagem</button>
-        </div>
-    </div>
+        <h2>Counter-Strike: Source (2004)</h2>
+        <p>
+            Com a chegada do motor gráfico <strong>Source Engine</strong>, a Valve lançou o <em>Counter-Strike: Source</em>. Apesar das melhorias gráficas, muitos jogadores continuaram fiéis ao CS 1.6.
+        </p>
 
-    <div class="game-section">
-        <img id="csGOImage" src="stage/images/cs_go.jpg" alt="Counter-Strike: Global Offensive">
-        <div class="game-info">
-            <h1>Counter-Strike: Global Offensive (2012)</h1>
-            <p>Uma versão que trouxe grandes melhorias gráficas...</p>
-            <button class="edit-button" onclick="editImageLink('csGOImage')">Adicionar Imagem</button>
-        </div>
-    </div>
+        <h2>Counter-Strike: Global Offensive (CS:GO, 2012)</h2>
+        <p>
+            Desenvolvido pela Valve e Hidden Path Entertainment, o CS:GO modernizou a franquia com:
+        </p>
+        <ul>
+            <li><strong>Gráficos Atualizados:</strong> Melhor iluminação, texturas e modelos de armas.</li>
+            <li><strong>Sistema Competitivo:</strong> Introdução de rankings e <em>matchmaking</em>.</li>
+            <li><strong>Novas Armas e Mapas:</strong> Balanceamento entre clássicos e novidades.</li>
+        </ul>
+        <p>
+            Com o tempo, o CS:GO se tornou o carro-chefe da franquia, adotando um modelo gratuito em 2018, expandindo ainda mais sua base de jogadores.
+        </p>
 
-    <div class="game-section">
-        <img id="cs2Image" src="stage/images/cs2_image.jpg" alt="Counter-Strike 2">
-        <div class="game-info">
-            <h1>Counter-Strike 2 (2023)</h1>
-            <p>Atualização massiva lançada no motor Source 2...</p>
-            <button class="edit-button" onclick="editImageLink('cs2Image')">Adicionar Imagem</button>
-        </div>
-    </div>
-</section>
+        <h2>Esports e Impacto Cultural</h2>
+        <p>
+            Counter-Strike é uma pedra angular dos <strong>esports</strong>, com torneios de alto nível como:
+        </p>
+        <ul>
+            <li><strong>ESL One</strong> e <strong>IEM</strong> (Intel Extreme Masters).</li>
+            <li><strong>Majors de CS:GO</strong>, organizados pela Valve, com premiações milionárias.</li>
+        </ul>
+        <p>
+            Equipes como <strong>Astralis</strong>, <strong>Natus Vincere (Na'Vi)</strong> e <strong>FURIA</strong> (do Brasil) se destacam no cenário competitivo.
+        </p>
 
-<footer>
-    <p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p>
-</footer>
+        <h2>Counter-Strike 2 (2023)</h2>
+        <p>
+            Lançado como atualização gratuita do CS:GO, o <strong>Counter-Strike 2</strong> traz:
+        </p>
+        <ul>
+            <li>Melhorias no motor gráfico <strong>Source 2</strong>, com gráficos impressionantes.</li>
+            <li>Sistema de fumaça dinâmico, aprimorando a estratégia.</li>
+            <li>Foco em manter o equilíbrio entre tradição e inovação.</li>
+        </ul>
 
-<!-- Caixa de diálogo para inserir link -->
-<script>
-    // Função para editar o link da imagem
-    function editImageLink(imageId) {
-        const newImageUrl = prompt("Insira o link da nova imagem (ex: stage/images/nova_imagem.jpg):");
-        if (newImageUrl) {
-            document.getElementById(imageId).src = newImageUrl;
-            // Armazenar a nova URL no Local Storage
-            localStorage.setItem(imageId, newImageUrl);
-        }
-    }
+        <h2>Por que Counter-Strike é um Fenômeno?</h2>
+        <p>
+            Counter-Strike conquistou milhões de fãs ao longo de décadas porque combina:
+        </p>
+        <ul>
+            <li><strong>Simplicidade e profundidade:</strong> Fácil de entender, difícil de dominar.</li>
+            <li><strong>Comunidade:</strong> Um dos pilares do sucesso é a interação com a comunidade.</li>
+            <li><strong>Longevidade:</strong> Mesmo após décadas, continua relevante.</li>
+        </ul>
 
-    // Função para carregar as imagens salvas do Local Storage
-    function loadSavedImages() {
-        const creatorsImageUrl = localStorage.getItem('creatorsImage');
-        const cs16ImageUrl = localStorage.getItem('cs16Image');
-        const csZeroImageUrl = localStorage.getItem('csZeroImage');
-        const csSourceImageUrl = localStorage.getItem('csSourceImage');
-        const csGOImageUrl = localStorage.getItem('csGOImage');
-        const cs2ImageUrl = localStorage.getItem('cs2Image');
-
-        if (creatorsImageUrl) {
-            document.getElementById('creatorsImage').src = creatorsImageUrl;
-        }
-        if (cs16ImageUrl) {
-            document.getElementById('cs16Image').src = cs16ImageUrl;
-        }
-        if (csZeroImageUrl) {
-            document.getElementById('csZeroImage').src = csZeroImageUrl;
-        }
-        if (csSourceImageUrl) {
-            document.getElementById('csSourceImage').src = csSourceImageUrl;
-        }
-        if (csGOImageUrl) {
-            document.getElementById('csGOImage').src = csGOImageUrl;
-        }
-        if (cs2ImageUrl) {
-            document.getElementById('cs2Image').src = cs2ImageUrl;
-        }
-    }
-
-    // Carregar as imagens salvas ao carregar a página
-    window.onload = loadSavedImages;
+        <p>
+            Essa é a incrível jornada de Counter-Strike: de um <em>mod</em> feito por fãs a um dos jogos mais importantes da história dos videogames!
+        </p>
+        <img src="jogandocs.png" alt="Imagem ilustrativa de Counter-Strike" class="img-fluid">
+    </main>
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <link rel="stylesheet" type="text/css" href="css.css" media="screen" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidade - Counter-Strike</title>
-    <style>
-        
-    </style>
-</head>
-<body>
-	<header>
-        <img src="banner.jpeg" alt="Banner 1" height="90" width="1400">
-   </header>
-<nav>
-    <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="historia.html">História</a></li>
-        <li><a href="como-funciona.html">Como Funciona</a></li>
-        <li><a href="campeonatos.html">Campeonatos</a></li>
-        <li><a href="ranking.html">Ranking</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="comunidade.html">Comunidade</a></li>
-        <li><a href="galeria.html">Galeria</a></li>
-    </ul>
-</nav>
-<section>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>InfoStrike</title>
+        <!-- Link do Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Link dos ícones do Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link rel="stylesheet" href="css.css">
+    </head>
+    <body>
+        <!-- Cabeçalho -->
+        <header class="bg-warning py-3 d-flex align-items-center justify-content-between">
+            <!-- Botão do Menu no canto esquerdo -->
+            <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+                <i class="bi bi-list"></i> Menu
+            </button>
+            <!-- Logo centralizada -->
+            <img src="banner.jpeg" alt="Logo InfoStrike" class="logo mx-auto">
+            <!-- Botão de Tema no canto direito -->
+            <button id="dark-mode-toggle" class="btn btn-dark">
+                <i class="bi bi-moon-fill"></i> Tema
+            </button>
+        </header>
+    
+        <!-- Menu Lateral -->
+        <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+            <div class="offcanvas-header">
+                <h5 id="sidebarLabel" class="text-dark"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="list-unstyled">
+                    <li><a href="index.html" class="text-dark"><i class="bi bi-house-fill"></i> Home</a></li>
+                    <li><a href="historia.html" class="text-dark"><i class="bi bi-book"></i> História</a></li>
+                    <li><a href="modos.html" class="text-dark"><i class="bi bi-controller"></i> Modos de Jogo</a></li>
+                    <li><a href="campeonatos.html" class="text-dark"><i class="bi bi-trophy-fill"></i> Campeonatos</a></li>
+                    <li><a href="mapas.html" class="text-dark"><i class="bi bi-map"></i> Mapas</a></li>
+                    <li><a href="armas.html" class="text-dark"><i class="bi bi-crosshair"></i> Armas</a></li>
+                    <li><a href="comunidade.html" class="text-dark"><i class="bi bi-people-fill"></i> Comunidade</a></li>
+                    <li><a href="contato.html" class="text-dark"><i class="bi bi-envelope"></i> Contato</a></li>
+                    <li><a href="noticias.html" class="text-dark"><i class="bi bi-newspaper"></i> Noticias</a></li>
+                    <li><a href="ranking.html" class="text-dark"><i class="bi bi-graph-up-arrow"></i> Ranking</a></li>
+                    <li><a href="galeria.html" class="text-dark"><i class="bi bi-card-image"></i> Galeria</a></li>
+                    <li><a href="como-funciona.html" class="text-dark"><i class="bi bi-card-image"></i> Como Funciona</a></li>
+                </ul>
+            </div>
+        </div>
+    
     <h2>Participe da Comunidade</h2>
     <form>
         <textarea placeholder="Deixe seu comentário" rows="4" cols="50"></textarea><br>
@@ -33,5 +56,8 @@
     </form>
 </section>
 <footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+ <!-- Script do Bootstrap -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="script.js"></script>
 </body>
 </html>

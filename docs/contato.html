@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoStrike</title>
+    <title>InfoStrike - Contato</title>
     <!-- Link do Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Link dos ícones do Bootstrap -->
@@ -41,6 +42,7 @@
                 <li><a href="armas.html" class="text-dark"><i class="bi bi-crosshair"></i> Armas</a></li>
                 <li><a href="comunidade.html" class="text-dark"><i class="bi bi-people-fill"></i> Comunidade</a></li>
                 <li><a href="contato.html" class="text-dark"><i class="bi bi-envelope"></i> Contato</a></li>
+                <li><a href="noticias.html" class="text-dark"><i class="bi bi-newspaper"></i> Noticias</a></li>
                 <li><a href="ranking.html" class="text-dark"><i class="bi bi-graph-up-arrow"></i> Ranking</a></li>
                 <li><a href="galeria.html" class="text-dark"><i class="bi bi-card-image"></i> Galeria</a></li>
                 <li><a href="como-funciona.html" class="text-dark"><i class="bi bi-card-image"></i> Como Funciona</a></li>
@@ -50,56 +52,36 @@
 
     <!-- Conteúdo Principal -->
     <main class="container mt-3">
-        <h1 class="text-center">Bem-vindo ao InfoStrike!</h1>
-        <p class="text-center">Explore todas as informações sobre o universo de Counter-Strike, desde suas origens até as versões mais recentes.</p>
-    </main>
-    <main class="container mt-3">
-        <h1 class="text-center">Bem-vindo ao InfoStrike!</h1>
-        <p class="text-center">Explore tudo sobre o universo de Counter-Strike! Aqui você encontrará informações sobre os jogos, modos de jogo, campeonatos, comunidades e muito mais. Prepare-se para dominar o jogo!</p>
-    
-        <section class="container mt-5">
-            <h2 class="text-center">O que você encontrará aqui</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="modos.jpg" class="card-img-top" alt="Modos de Jogo">
-                        <div class="card-body">
-                            <h5 class="card-title">Modos de Jogo</h5>
-                            <p class="card-text">Descubra os diferentes modos de jogo em Counter-Strike e suas particularidades.</p>
-                            <a href="modos.html" class="btn btn-primary">Veja os Modos</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="campeonatos.jpg" class="card-img-top" alt="Campeonatos">
-                        <div class="card-body">
-                            <h5 class="card-title">Campeonatos</h5>
-                            <p class="card-text">Fique por dentro dos campeonatos de Counter-Strike, tanto locais quanto internacionais.</p>
-                            <a href="campeonatos.html" class="btn btn-primary">Confira os Campeonatos</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="comunidade.jpg" class="card-img-top" alt="Comunidade">
-                        <div class="card-body">
-                            <h5 class="card-title">Comunidade</h5>
-                            <p class="card-text">Participe da comunidade de Counter-Strike, compartilhe dicas, estratégias e experiências com outros jogadores!</p>
-                            <a href="comunidade.html" class="btn btn-primary">Junte-se à Comunidade</a>
-                        </div>
-                    </div>
-                </div>
+        <h1 class="text-center">Contato</h1>
+        <p class="text-center">Entre em contato conosco para sugestões, dúvidas ou comentários!</p>
+
+        <!-- Formulário de Contato -->
+        <form>
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
             </div>
-        </section>
-    
-        <section class="container mt-5 text-center">
-            <h2>Junte-se à Comunidade!</h2>
-            <p>Se você é um verdadeiro fã de Counter-Strike, inscreva-se no nosso site para receber atualizações e dicas exclusivas!</p>
-            <a href="inscricao.html" class="btn btn-danger btn-lg">Inscreva-se Agora</a>
-        </section>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Seu email" required>
+            </div>
+            <div class="mb-3">
+                <label for="tipo-mensagem" class="form-label">Tipo de Mensagem:</label>
+                <select class="form-select" id="tipo-mensagem" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="comentario">Comentário</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="mensagem" class="form-label">Mensagem:</label>
+                <textarea class="form-control" id="mensagem" rows="4" placeholder="Digite sua mensagem aqui..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning">Enviar</button>
+        </form>
     </main>
-    
+
     <!-- Script do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
