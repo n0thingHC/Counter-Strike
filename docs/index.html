@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>InfoStrike - Home</title>
+    <title>InfoStrike</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -18,7 +18,7 @@
         
         <!-- Imagem do Banner (Centralizado) -->
         <div class="mx-auto">
-            <img src="banner.jpeg" alt="Banner InfoStrike" class="img-fluid">
+            <img src="banner.jpeg" alt="Banner InfoStrike" class="img-fluid" style="max-width: 80%; height: auto;">
         </div>
         
         <!-- Botão de Alternar Tema (Lado Direito) -->
@@ -27,10 +27,10 @@
         </button>
     </header>
 
-    <!-- Menu Lateral -->
-    <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+    <!-- Menu Lateral FIXO -->
+    <div class="offcanvas offcanvas-start bg-warning fixed-left" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
         <div class="offcanvas-header">
-            <h5 id="sidebarLabel" class="text-dark">Menu</h5>
+            <h5 id="sidebarLabel" class="text-dark"></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -50,36 +50,63 @@
             </ul>
         </div>
     </div>
-
     <!-- Conteúdo Principal -->
     <main class="container mt-3">
-        <h1 class="text-center">Bem-vindo ao InfoStrike!</h1>
+        <section>
+            <h2 class="text-center">Bem-vindo ao InfoStrike!</h2>
+            <p class="text-center">Explore tudo sobre o universo de Counter-Strike, desde suas origens até as versões mais recentes do jogo.</p>
+        </section>
 
-        <div class="conteudo-barrado"></div>
+        <!-- Bloco de Estatísticas -->
+        <section>
+            <h3>Estatísticas Recentes</h3>
+            <ul>
+                <li>Jogadores Ativos: 1.2M</li>
+                <li>Recordes de Partidas: 50.000+</li>
+                <li>Últimos Campeonatos: CS Major 2024</li>
+            </ul>
+        </section>
 
-        <p class="text-center">
-            O InfoStrike é um portal dedicado ao universo de Counter-Strike. Aqui, você encontra tudo sobre o jogo, desde sua história até dicas para melhorar no jogo.
-        </p>
-        
-        <!-- Adicionando uma imagem relevante para o conteúdo -->
-        <div class="text-center">
-            <img src="banner1.jpeg" alt="Imagem ilustrativa de Counter-Strike" class="img-fluid mb-3">
-        </div>
+        <!-- Bloco de Modos de Jogo -->
+        <section>
+            <h3><a href="modos.html" class="text-decoration-none text-warning">Modos de Jogo Populares</a></h3>
+            <ul>
+                <li><a href="modos.html" class="text-decoration-none text-dark">Modo Competitivo</a></li>
+                <li><a href="modos.html" class="text-decoration-none text-dark">Modo Casual</a></li>
+                <li><a href="modos.html" class="text-decoration-none text-dark">Deathmatch</a></li>
+                <li><a href="modos.html" class="text-decoration-none text-dark">Arms Race</a></li>
+            </ul>
+        </section>
 
-        <!-- Links rápidos -->
-        <div class="row text-center">
-            <div class="col">
-                <a href="historia.html" class="btn btn-outline-primary">História</a>
+        <!-- Bloco de Notícias ou Atualizações -->
+        <section>
+            <h3><a href="noticias.html" class="text-decoration-none text-warning">Últimas Atualizações</a></h3>
+            <p>Fique por dentro das novidades do jogo e dos campeonatos.</p>
+        </section>
+
+        <!-- Galeria de Imagens -->
+        <section>
+            <h3><a href="galeria.html" class="text-decoration-none text-warning">Galeria de Imagens</a></h3>
+            <div class="row">
+                <div class="col-4">
+                    <img src="image1.jpg" alt="Imagem 1" class="img-fluid">
+                </div>
+                <div class="col-4">
+                    <img src="image2.jpg" alt="Imagem 2" class="img-fluid">
+                </div>
+                <div class="col-4">
+                    <img src="image3.jpg" alt="Imagem 3" class="img-fluid">
+                </div>
             </div>
-            <div class="col">
-                <a href="modos.html" class="btn btn-outline-primary">Modos de Jogo</a>
-            </div>
-            <div class="col">
-                <a href="campeonatos.html" class="btn btn-outline-primary">Campeonatos</a>
-            </div>
-        </div>
+        </section>
+
+        <!-- Botão de Chamada para Ação -->
+        <section class="text-center">
+            <a href="contato.html" class="btn btn-warning">Junte-se a nós!</a>
+        </section>
     </main>
 
+    <!-- Script do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>

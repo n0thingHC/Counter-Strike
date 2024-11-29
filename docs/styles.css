@@ -9,7 +9,7 @@ body {
 /* Tema Escuro */
 body.dark-mode {
     background-color: #121212;
-    color: #f4f4f4;
+    color: #d2daeb;
 }
 
 /* Cabeçalho */
@@ -25,4 +25,134 @@ footer.dark-mode {
 /* Modo escuro para o botão de alternar tema */
 #dark-mode-toggle.dark-mode {
     background-color: #444;
+}
+
+/* Estilo do banner */
+.banner-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Estilo do Menu Lateral FIXO */
+.fixed-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;  /* Largura fixa */
+    height: 100%;
+    padding-top: 20px;
+    z-index: 1050;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas-body {
+    padding: 0;
+}
+
+.offcanvas-body a {
+    color: #f0f0f0;
+    padding: 12px 20px;
+    display: block;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.offcanvas-body a:hover {
+    background-color: #444;
+    color: #ffc107;
+}
+
+/* Estilo dos botões no modo escuro */
+button.dark-mode {
+    background-color: #444;
+    color: white;
+    border: 1px solid white;
+}
+
+/* Estilo do Cabeçalho */
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+}
+
+header h1 {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+header button {
+    position: relative;
+    z-index: 1050;
+}
+
+/* Estilo do botão de Menu */
+.btn-dark {
+    position: relative;
+    z-index: 1050;
+}
+
+/* Ajuste para o Banner */
+header img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Links no Menu Lateral */
+.offcanvas a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.offcanvas a:hover {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+/* Links na seção Modos de Jogo */
+section a {
+    color: #f4f4f4;  /* Cor clara no modo escuro */
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+section a:hover {
+    color: #ffc107;  /* Cor amarela no hover */
+    font-weight: bold;
+}
+
+/* Links no modo escuro */
+body.dark-mode section a {
+    color: #f4f4f4;  /* Cor clara no fundo escuro */
+}
+
+body.dark-mode section a:hover {
+    color: #ffc107;  /* Cor amarela para o hover */
+}
+
+/* Estilo geral para links da página inicial */
+body.dark-mode a {
+    color: #f4f4f4;  /* Para links em outras áreas */
+}
+
+body.dark-mode a:hover {
+    color: #ffc107;  /* Para links no hover */
 }

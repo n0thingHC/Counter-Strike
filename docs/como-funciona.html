@@ -8,7 +8,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Link dos ícones do Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <!-- Cabeçalho -->
@@ -49,8 +49,8 @@
             </div>
         </div>
     
-<section>
-    <h2>Objetivos do Jogo</h2>
+        <section>
+            <h2>Objetivos do Jogo</h2>
             <p>O objetivo do jogo varia dependendo do modo de jogo, mas geralmente envolve completar missões como desativar ou plantar uma bomba, <br>
              resgatar reféns ou eliminar a equipe adversária. As equipes devem trabalhar juntas para alcançar seus objetivos enquanto tentam impedir a equipe oponente.
             </p>
@@ -60,48 +60,18 @@
             </ul>
             
             <!-- Imagem de Terroristas Plantando a Bomba -->
-            <img id="terroristasImage" src="CSGObombplant.jpg" alt="Terroristas plantando a bomba">
-            <button onclick="addImage('terroristasImage')">Adicionar Imagem de Terroristas</button>
+            <img id="terroristasImage" src="terrobomb.jpg" alt="Terroristas plantando a bomba">
 
             <h3>Contra-Terroristas Desarmando a Bomba</h3>
             <p>Após o plantio, o trabalho dos contra-terroristas é encontrar e desarmar a bomba antes que ela exploda.</p>
 
             <!-- Imagem de Contra-Terroristas Desarmando a Bomba -->
-            <img id="contraTerroristasImage" src="img/contra-terroristas.jpeg" alt="Contra-terroristas desarmando a bomba">
-            <button onclick="addImage('contraTerroristasImage')">Adicionar Imagem de Contra-Terroristas</button>
-</section>
-<footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+            <img id="contraTerroristasImage" src="desarmbomb.png" alt="Contra-terroristas desarmando a bomba">
+        </section>
 
-<script>
-    // Função para adicionar a URL da imagem via prompt
-    function addImage(imageId) {
-        const imageUrl = prompt("Insira o link da nova imagem:");
-        if (imageUrl) {
-            document.getElementById(imageId).src = imageUrl;
-            // Salvar a URL da imagem no Local Storage
-            localStorage.setItem(imageId, imageUrl);
-        }
-    }
-
-    // Função para carregar as imagens salvas do Local Storage
-    function loadSavedImages() {
-        const terroristasImageUrl = localStorage.getItem('terroristasImage');
-        const contraTerroristasImageUrl = localStorage.getItem('contraTerroristasImage');
-
-        if (terroristasImageUrl) {
-            document.getElementById('terroristasImage').src = terroristasImageUrl;
-        }
-        if (contraTerroristasImageUrl) {
-            document.getElementById('contraTerroristasImage').src = contraTerroristasImageUrl;
-        }
-    }
-
-    // Carregar as imagens salvas quando a página for carregada
-    window.onload = loadSavedImages;
-</script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="script.js"></script>
-</script>
-
-</body>
+        <footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
