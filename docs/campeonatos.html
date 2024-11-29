@@ -4,28 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InfoStrike</title>
-    <!-- Link do Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Link dos ícones do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header class="bg-warning py-3 d-flex align-items-center justify-content-between">
-        <!-- Botão do Menu no canto esquerdo -->
         <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
             <i class="bi bi-list"></i> Menu
         </button>
-        <!-- Logo centralizada -->
         <img src="banner.jpeg" alt="Logo InfoStrike" class="logo mx-auto d-block">
-        <!-- Botão de Tema no canto direito -->
         <button id="dark-mode-toggle" class="btn btn-dark">
             <i class="bi bi-moon-fill"></i> Tema
         </button>
     </header>
 
-    <!-- Menu Lateral -->
     <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
         <div class="offcanvas-header">
             <h5 id="sidebarLabel" class="text-dark"></h5>
@@ -48,15 +41,12 @@
         </div>
     </div>
 
-    <!-- Cabeçalho da página de Campeonatos -->
     <header>
         <h1>Próximos Grandes Campeonatos de Counter-Strike</h1>
     </header>
 
     <section>
-        <div class="lista-campeonatos" id="lista-campeonatos">
-            <!-- Campeonatos serão adicionados aqui -->
-        </div>
+        <div class="lista-campeonatos" id="lista-campeonatos"></div>
 
         <div id="form-campeonato">
             <h2>Adicionar Campeonato</h2>
@@ -64,11 +54,6 @@
             <input type="text" id="premiacao" placeholder="Premiação" required>
             <input type="text" id="data" placeholder="Data" required>
             <input type="text" id="local" placeholder="Local" required>
-            
-            <!-- Removidos os campos de arquivo -->
-            <!-- <input type="file" id="logo" accept="image/*" required>
-            <input type="file" id="bandeira" accept="image/*" required> -->
-
             <button onclick="adicionarCampeonato()" class="btn btn-primary">Adicionar Campeonato</button>
         </div>
     </section>
@@ -108,8 +93,6 @@
             const data = document.getElementById('data').value;
             const local = document.getElementById('local').value;
 
-            // Removendo a lógica para o logo e bandeira, pois os inputs foram removidos
-
             if (campeonatoEditandoIndex !== null) {
                 campeonatos[campeonatoEditandoIndex] = { nome, premiacao, data, local };
                 campeonatoEditandoIndex = null;
@@ -130,7 +113,6 @@
             document.getElementById('data').value = campeonato.data;
             document.getElementById('local').value = campeonato.local;
 
-            // Armazena o índice para edição
             campeonatoEditandoIndex = index;
         }
 
@@ -140,11 +122,9 @@
             atualizarLista();
         }
 
-        // Inicializa a lista de campeonatos
         atualizarLista();
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

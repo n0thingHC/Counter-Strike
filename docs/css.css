@@ -267,52 +267,6 @@ footer {
     background-color: #45a049;
 }
 
-/* Seção Galeria */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    justify-items: center;
-}
-
-figure {
-    margin: 0;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-}
-
-img {
-    max-width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-figcaption {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
-}
-
-button {
-    padding: 10px 15px;
-    margin: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/* Seção Ranking */
 h1 {
     font-size: 28px;
     margin-bottom: 20px;
