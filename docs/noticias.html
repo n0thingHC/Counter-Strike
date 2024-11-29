@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +9,27 @@
     <!-- Link dos ícones do Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="css.css">
+    <style> 
+        @media (max-width: 768px) {
+        .offcanvas-start {
+         width: 200px; 
+    </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
+
     <header class="bg-warning py-3 d-flex align-items-center justify-content-between">
         <!-- Botão do Menu no canto esquerdo -->
         <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
             <i class="bi bi-list"></i> Menu
         </button>
-        <!-- Logo centralizada -->
+        
         <img src="banner.jpeg" alt="Logo InfoStrike" class="logo mx-auto">
-        <!-- Botão de Tema no canto direito -->
+        
         <button id="dark-mode-toggle" class="btn btn-dark">
             <i class="bi bi-moon-fill"></i> Tema
         </button>
     </header>
 
-    <!-- Menu Lateral -->
     <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
         <div class="offcanvas-header">
             <h5 id="sidebarLabel" class="text-dark"></h5>
@@ -76,7 +82,6 @@
     <footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
 
     <script>
-        // Função para adicionar uma nova notícia
         function addNews() {
             const title = prompt("Digite o título da notícia:");
             const description = prompt("Digite a descrição da notícia:");
@@ -85,29 +90,24 @@
             if (title && description && link) {
                 const newsList = document.getElementById("newsList");
 
-                // Cria um novo item de notícia
                 const newNewsItem = document.createElement("div");
                 newNewsItem.classList.add("news-item");
 
-                // Cria o título da notícia com link
                 const newsTitle = document.createElement("h3");
                 const newsLink = document.createElement("a");
                 newsLink.href = link;
                 newsLink.textContent = title;
                 newsTitle.appendChild(newsLink);
 
-                // Cria a descrição da notícia
                 const newsDescription = document.createElement("p");
                 newsDescription.textContent = description;
 
-                // Cria o botão de editar
                 const editButton = document.createElement("button");
                 editButton.textContent = "Editar";
                 editButton.onclick = function() {
                     editNews(editButton);
                 };
-
-                // Cria o botão de excluir
+     
                 const deleteButton = document.createElement("button");
                 deleteButton.classList.add("delete-btn");
                 deleteButton.textContent = "Excluir";
@@ -115,20 +115,17 @@
                     deleteNews(deleteButton);
                 };
 
-                // Adiciona os elementos criados ao item de notícia
                 newNewsItem.appendChild(newsTitle);
                 newNewsItem.appendChild(newsDescription);
                 newNewsItem.appendChild(editButton);
                 newNewsItem.appendChild(deleteButton);
 
-                // Adiciona o item de notícia à lista de notícias
                 newsList.appendChild(newNewsItem);
             } else {
                 alert("Todos os campos são obrigatórios!");
             }
         }
 
-        // Função para editar uma notícia existente
         function editNews(button) {
             const newsItem = button.parentElement;
             const titleElement = newsItem.querySelector("h3 a");
@@ -147,7 +144,6 @@
             }
         }
 
-        // Função para excluir uma notícia existente
         function deleteNews(button) {
             const newsItem = button.parentElement;
             newsItem.remove(); // Remove o item de notícia da página
