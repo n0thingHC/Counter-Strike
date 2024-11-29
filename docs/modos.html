@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modos de Jogo - CS2</title>
+    <!-- Link do Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Link dos ícones do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-warning py-3 d-flex align-items-center justify-content-between">
+        <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+            <i class="bi bi-list"></i> Menu
+        </button>
+        <img src="banner.jpeg" alt="Logo InfoStrike" class="logo mx-auto d-block">
+        <button id="dark-mode-toggle" class="btn btn-dark">
+            <i class="bi bi-moon-fill"></i> Tema
+        </button>
+    </header>
+
+    <!-- Menu Lateral -->
+    <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 id="sidebarLabel" class="text-dark"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li><a href="index.html" class="text-dark"><i class="bi bi-house-fill"></i> Home</a></li>
+                <li><a href="historia.html" class="text-dark"><i class="bi bi-book"></i> História</a></li>
+                <li><a href="modos.html" class="text-dark"><i class="bi bi-controller"></i> Modos de Jogo</a></li>
+                <li><a href="campeonatos.html" class="text-dark"><i class="bi bi-trophy-fill"></i> Campeonatos</a></li>
+                <li><a href="mapas.html" class="text-dark"><i class="bi bi-map"></i> Mapas</a></li>
+                <li><a href="armas.html" class="text-dark"><i class="bi bi-crosshair"></i> Armas</a></li>
+                <li><a href="comunidade.html" class="text-dark"><i class="bi bi-people-fill"></i> Comunidade</a></li>
+                <li><a href="contato.html" class="text-dark"><i class="bi bi-envelope"></i> Contato</a></li>
+                <li><a href="noticias.html" class="text-dark"><i class="bi bi-newspaper"></i> Noticias</a></li>
+                <li><a href="ranking.html" class="text-dark"><i class="bi bi-graph-up-arrow"></i> Ranking</a></li>
+                <li><a href="galeria.html" class="text-dark"><i class="bi bi-card-image"></i> Galeria</a></li>
+                <li><a href="como-funciona.html" class="text-dark"><i class="bi bi-card-image"></i> Como Funciona</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Cabeçalho da página de Modos de Jogo -->
+    <header class="container mt-4">
+        <h1>Modos de Jogo do Counter-Strike 2</h1>
+        <p>Descubra os diferentes modos de jogo disponíveis no Counter-Strike 2, cada um com regras e mecânicas próprias.</p>
+    </header>
+
+    <section class="container mt-5">
+        <div class="row">
+            <!-- Modo Competitivo -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="competitivo.jpg" class="card-img-top" alt="Modo Competitivo">
+                    <div class="card-body">
+                        <h5 class="card-title">Modo Competitivo</h5>
+                        <p class="card-text">O modo competitivo é o modo mais popular e desafiador de Counter-Strike. É jogado em partidas 5v5, onde duas equipes competem em vários rounds, alternando entre os lados Terrorista (T) e Contra-Terrorista (CT). O objetivo é plantar ou desarmar a bomba, ou eliminar a equipe adversária. Vence a equipe que atingir 16 pontos primeiro.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modo Casual -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="casual.jpg" class="card-img-top" alt="Modo Casual">
+                    <div class="card-body">
+                        <h5 class="card-title">Modo Casual</h5>
+                        <p class="card-text">No modo casual, as regras são mais relaxadas, permitindo partidas com até 10 jogadores (5v5) sem a necessidade de comprar armas antes de cada round. Os jogadores podem continuar jogando, mesmo depois de morrer, e o objetivo principal é derrotar a outra equipe, seja plantando/desarmando a bomba ou eliminando o time adversário.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modo Mata-Mata -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="matamata.jpg" class="card-img-top" alt="Modo Mata-Mata">
+                    <div class="card-body">
+                        <h5 class="card-title">Modo Mata-Mata</h5>
+                        <p class="card-text">O modo Mata-Mata é um modo de jogo rápido e intenso, onde o objetivo principal é matar o maior número de adversários possível. Não há plantio ou desarme de bomba, apenas eliminações. Os jogadores têm respawns contínuos e cada morte concede pontos, com o primeiro time a alcançar um número predeterminado de kills vencendo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <p>&copy; 2024 InfoStrike - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
