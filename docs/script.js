@@ -6,27 +6,26 @@ const addImageBtnFile = document.getElementById('add-image-btn-file');
 const imageFileInput = document.getElementById('image-file-input');
 let imageElement = null;
 
-// Verifica se o usuário tem preferência salva
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme === 'dark') {
     body.classList.add('dark-mode');
-    toggleButton.classList.add('dark-mode'); // Adiciona a classe ao botão
+    toggleButton.classList.add('dark-mode'); 
 }
 
 // Alterna entre os temas
 toggleButton.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
-    toggleButton.classList.toggle('dark-mode'); // Alterna a classe do botão
+    toggleButton.classList.toggle('dark-mode');
     const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', theme); // Salva a preferência do usuário
+    localStorage.setItem('theme', theme); 
 });
 
 // Função para adicionar a imagem ao conteúdo (URL)
 addImageBtnUrl.addEventListener('click', () => {
-    imageUrlInput.style.display = 'block'; // Exibe o campo de URL da imagem
+    imageUrlInput.style.display = 'block'; 
 });
 
-// Adiciona a imagem ao conteúdo quando o usuário colar a URL
+
 imageUrlInput.addEventListener('change', () => {
     const imageUrl = imageUrlInput.value.trim();
     if (imageUrl) {
@@ -37,17 +36,17 @@ imageUrlInput.addEventListener('change', () => {
             document.querySelector('main').appendChild(imageElement);
         }
         imageElement.src = imageUrl;
-        imageUrlInput.value = ''; // Limpa o campo de URL após adicionar a imagem
-        imageUrlInput.style.display = 'none'; // Oculta o campo de URL novamente
+        imageUrlInput.value = ''; 
+        imageUrlInput.style.display = 'none'; 
     }
 });
 
-// Função para adicionar a imagem ao conteúdo (Arquivo)
+
 addImageBtnFile.addEventListener('click', () => {
     imageFileInput.style.display = 'block'; // Exibe o campo para selecionar arquivo
 });
 
-// Adiciona a imagem ao conteúdo quando o usuário selecionar um arquivo
+
 imageFileInput.addEventListener('change', () => {
     const file = imageFileInput.files[0];
     if (file) {
@@ -59,10 +58,10 @@ imageFileInput.addEventListener('change', () => {
                 imageElement.style.height = 'auto';
                 document.querySelector('main').appendChild(imageElement);
             }
-            imageElement.src = e.target.result; // Exibe o arquivo selecionado
+            imageElement.src = e.target.result; 
         };
         reader.readAsDataURL(file);
-        imageFileInput.value = ''; // Limpa o campo após adicionar a imagem
-        imageFileInput.style.display = 'none'; // Oculta o campo novamente
+        imageFileInput.value = ''; 
+        imageFileInput.style.display = 'none'; 
     }
 });

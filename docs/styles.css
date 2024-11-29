@@ -13,6 +13,12 @@ body.dark-mode {
 }
 
 /* Cabeçalho */
+
+@media (max-width: 768px) {
+/* No menu lateral, em telas menores, ajuste a largura */
+.offcanvas-start {
+width: 200px; /* Largura reduzida */
+
 header.dark-mode {
     background-color: #333;
 }

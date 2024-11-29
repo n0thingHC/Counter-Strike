@@ -43,7 +43,6 @@
                 <li><a href="contato.html" class="text-dark"><i class="bi bi-envelope"></i> Contato</a></li>
                 <li><a href="noticias.html" class="text-dark"><i class="bi bi-newspaper"></i> Noticias</a></li>
                 <li><a href="ranking.html" class="text-dark"><i class="bi bi-graph-up-arrow"></i> Ranking</a></li>
-                <li><a href="galeria.html" class="text-dark"><i class="bi bi-card-image"></i> Galeria</a></li>
                 <li><a href="como-funciona.html" class="text-dark"><i class="bi bi-card-image"></i> Como Funciona</a></li>
             </ul>
         </div>
@@ -65,8 +64,11 @@
             <input type="text" id="premiacao" placeholder="Premiação" required>
             <input type="text" id="data" placeholder="Data" required>
             <input type="text" id="local" placeholder="Local" required>
-            <input type="file" id="logo" accept="image/*" required>
-            <input type="file" id="bandeira" accept="image/*" required>
+            
+            <!-- Removidos os campos de arquivo -->
+            <!-- <input type="file" id="logo" accept="image/*" required>
+            <input type="file" id="bandeira" accept="image/*" required> -->
+
             <button onclick="adicionarCampeonato()" class="btn btn-primary">Adicionar Campeonato</button>
         </div>
     </section>
@@ -87,12 +89,11 @@
                 const div = document.createElement('div');
                 div.className = 'campeonato';
                 div.innerHTML = `
-                    <img class="logo-campeonato" src="${campeonato.logo}" alt="Logo ${campeonato.nome}">
                     <div class="info-campeonato">
                         <h2>${campeonato.nome}</h2>
                         <p><strong>Premiação:</strong> ${campeonato.premiacao}</p>
                         <p><strong>Data:</strong> ${campeonato.data}</p>
-                        <p class="localização"><strong>Local:</strong> ${campeonato.local} <img src="${campeonato.bandeira}" alt="Bandeira ${campeonato.local}"></p>
+                        <p class="localização"><strong>Local:</strong> ${campeonato.local}</p>
                         <button onclick="editarCampeonato(${index})">Editar</button>
                         <button onclick="removerCampeonato(${index})">Remover</button>
                     </div>
@@ -107,32 +108,19 @@
             const data = document.getElementById('data').value;
             const local = document.getElementById('local').value;
 
-            const logoFile = document.getElementById('logo').files[0];
-            const bandeiraFile = document.getElementById('bandeira').files[0];
+            // Removendo a lógica para o logo e bandeira, pois os inputs foram removidos
 
-            const readerLogo = new FileReader();
-            const readerBandeira = new FileReader();
+            if (campeonatoEditandoIndex !== null) {
+                campeonatos[campeonatoEditandoIndex] = { nome, premiacao, data, local };
+                campeonatoEditandoIndex = null;
+            } else {
+                campeonatos.push({ nome, premiacao, data, local });
+            }
 
-            readerLogo.onload = function () {
-                const logo = readerLogo.result;
-                readerBandeira.onload = function () {
-                    const bandeira = readerBandeira.result;
+            localStorage.setItem('campeonatos', JSON.stringify(campeonatos));
+            atualizarLista();
 
-                    if (campeonatoEditandoIndex !== null) {
-                        campeonatos[campeonatoEditandoIndex] = { nome, premiacao, data, local, logo, bandeira };
-                        campeonatoEditandoIndex = null;
-                    } else {
-                        campeonatos.push({ nome, premiacao, data, local, logo, bandeira });
-                    }
-
-                    localStorage.setItem('campeonatos', JSON.stringify(campeonatos));
-                    atualizarLista();
-
-                    document.getElementById('form-campeonato').reset();
-                };
-                readerBandeira.readAsDataURL(bandeiraFile);
-            };
-            readerLogo.readAsDataURL(logoFile);
+            document.getElementById('form-campeonato').reset();
         }
 
         function editarCampeonato(index) {

@@ -1,187 +1,141 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="pt-BR">
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>InfoStrike</title>
-            <!-- Link do Bootstrap CSS -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-            <!-- Link dos ícones do Bootstrap -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-            <link rel="stylesheet" href="styles.css">
-        </head>
-        <body>
-            <!-- Cabeçalho -->
-            <header class="bg-warning py-3 d-flex align-items-center justify-content-between">
-                <!-- Botão do Menu no canto esquerdo -->
-                <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-                    <i class="bi bi-list"></i> Menu
-                </button>
-                <!-- Logo centralizada -->
-                <img src="banner.jpeg" alt="Logo InfoStrike" class="logo mx-auto">
-                <!-- Botão de Tema no canto direito -->
-                <button id="dark-mode-toggle" class="btn btn-dark">
-                    <i class="bi bi-moon-fill"></i> Tema
-                </button>
-            </header>
-        
-            <!-- Menu Lateral -->
-            <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-                <div class="offcanvas-header">
-                    <h5 id="sidebarLabel" class="text-dark"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-dark"><i class="bi bi-house-fill"></i> Home</a></li>
-                        <li><a href="historia.html" class="text-dark"><i class="bi bi-book"></i> História</a></li>
-                        <li><a href="modos.html" class="text-dark"><i class="bi bi-controller"></i> Modos de Jogo</a></li>
-                        <li><a href="campeonatos.html" class="text-dark"><i class="bi bi-trophy-fill"></i> Campeonatos</a></li>
-                        <li><a href="mapas.html" class="text-dark"><i class="bi bi-map"></i> Mapas</a></li>
-                        <li><a href="armas.html" class="text-dark"><i class="bi bi-crosshair"></i> Armas</a></li>
-                        <li><a href="comunidade.html" class="text-dark"><i class="bi bi-people-fill"></i> Comunidade</a></li>
-                        <li><a href="contato.html" class="text-dark"><i class="bi bi-envelope"></i> Contato</a></li>
-                        <li><a href="noticias.html" class="text-dark"><i class="bi bi-newspaper"></i> Noticias</a></li>
-                        <li><a href="ranking.html" class="text-dark"><i class="bi bi-graph-up-arrow"></i> Ranking</a></li>
-                        <li><a href="galeria.html" class="text-dark"><i class="bi bi-card-image"></i> Galeria</a></li>
-                        <li><a href="como-funciona.html" class="text-dark"><i class="bi bi-card-image"></i> Como Funciona</a></li>
-                    </ul>
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoStrike - Ranking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="bg-warning py-3 d-flex align-items-center justify-content-between">
+        <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+            <i class="bi bi-list"></i> Menu
+        </button>
+        <img src="banner.jpeg" alt="Logo InfoStrike" class="logo mx-auto">
+        <button id="dark-mode-toggle" class="btn btn-dark">
+            <i class="bi bi-moon-fill"></i> Tema
+        </button>
+    </header>
+
+    <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 id="sidebarLabel" class="text-dark"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li><a href="index.html" class="text-dark"><i class="bi bi-house-fill"></i> Home</a></li>
+                <li><a href="historia.html" class="text-dark"><i class="bi bi-book"></i> História</a></li>
+                <li><a href="modos.html" class="text-dark"><i class="bi bi-controller"></i> Modos de Jogo</a></li>
+                <li><a href="campeonatos.html" class="text-dark"><i class="bi bi-trophy-fill"></i> Campeonatos</a></li>
+                <li><a href="mapas.html" class="text-dark"><i class="bi bi-map"></i> Mapas</a></li>
+                <li><a href="armas.html" class="text-dark"><i class="bi bi-crosshair"></i> Armas</a></li>
+                <li><a href="comunidade.html" class="text-dark"><i class="bi bi-people-fill"></i> Comunidade</a></li>
+                <li><a href="contato.html" class="text-dark"><i class="bi bi-envelope"></i> Contato</a></li>
+                <li><a href="noticias.html" class="text-dark"><i class="bi bi-newspaper"></i> Noticias</a></li>
+                <li><a href="ranking.html" class="text-dark"><i class="bi bi-graph-up-arrow"></i> Ranking</a></li>
+                <li><a href="como-funciona.html" class="text-dark"><i class="bi bi-card-image"></i> Como Funciona</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="container mt-3">
+        <h1 class="text-center">Ranking dos Times de Counter-Strike 2</h1>
+        <p class="text-center">Confira o top 5 times com mais pontos no Counter-Strike 2.</p>
+
+        <div class="mt-5">
+            <h3>Top 5 Times</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Posição</th>
+                            <th>Nome do Time</th>
+                            <th>Pontos</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-table">
+                    </tbody>
+                </table>
             </div>
+        </div>
         
-            <!-- Conteúdo Principal -->
-            <main class="container mt-3">
-                <h1 class="text-center">Bem-vindo ao InfoStrike!</h1>
-                <p class="text-center">Explore todas as informações sobre o universo de Counter-Strike, desde suas origens até as versões mais recentes.</p>
-            </main>
-            
-</section>
+        <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="addTeam()">Adicionar Novo Time</button>
+        </div>
+    </main>
 
-<footer>
-    <p>&copy; 2024 Counter-Strike 2 Ranking Mundial. Todos os direitos reservados.</p>
-</footer>
+    <footer class="text-center py-4">
+        <p>&copy; 2024 InfoStrike - Todos os direitos reservados.</p>
+    </footer>
 
-<script>
-    // Carregar dados do LocalStorage quando a página é carregada
-    let teams = JSON.parse(localStorage.getItem("teams")) || [];
+    <script>
+        let teams = JSON.parse(localStorage.getItem("teams")) || [];
 
-    function saveTeams() {
-        localStorage.setItem("teams", JSON.stringify(teams));
-    }
-
-    function addTeam() {
-        const teamId = teams.length + 1;
-        const teamData = {
-            id: teamId,
-            name: `Time ${teamId}`,
-            points: 0,
-            logo: "",
-            players: [],
-        };
-        teams.push(teamData);
-        sortTeams();
-        renderTeams();
-        saveTeams(); // Salva as alterações no LocalStorage
-    }
-
-    function renderTeams() {
-        const container = document.getElementById("teams-container");
-        container.innerHTML = "";
-        teams.forEach((team, index) => {
-            const teamDiv = document.createElement("div");
-            teamDiv.classList.add("team");
-            teamDiv.innerHTML = `
-                <img src="${team.logo || "placeholder.png"}" class="team-logo" onclick="toggleTeamDetails(${team.id})" alt="Logo Time">
-                <div class="team-info">
-                    <span>${index + 1}º - ${team.name}</span> <br>
-                    <span>Pontos: ${team.points}</span>
-                </div>
-                <button onclick="editTeam(${team.id})">Editar Time</button>
-                <div id="team-players-${team.id}" style="display: none;">
-                    <button onclick="addPlayer(${team.id})">Adicionar Jogador/Técnico</button>
-                    <div id="players-container-${team.id}"></div>
-                </div>
-            `;
-            container.appendChild(teamDiv);
-            renderPlayers(team.id);
-        });
-    }
-
-    function toggleTeamDetails(teamId) {
-        const details = document.getElementById(`team-players-${teamId}`);
-        details.style.display = details.style.display === "block" ? "none" : "block";
-    }
-
-    function editTeam(teamId) {
-        const team = teams.find(t => t.id === teamId);
-        const newName = prompt("Digite o novo nome do time:", team.name);
-        const newPoints = prompt("Digite os pontos do time:", team.points);
-        const newLogo = prompt("Insira o URL da logo do time:", team.logo);
-
-        if (newName) team.name = newName;
-        if (newPoints) team.points = parseInt(newPoints);
-        if (newLogo) team.logo = newLogo;
-
-        sortTeams();
-        renderTeams();
-        saveTeams(); // Salva as alterações no LocalStorage
-    }
-
-    function addPlayer(teamId) {
-        const team = teams.find(t => t.id === teamId);
-        const playerName = prompt("Digite o nome do jogador:");
-        const playerPhoto = prompt("Insira o URL da foto do jogador:");
-
-        if (playerName && playerPhoto) {
-            team.players.push({ name: playerName, photo: playerPhoto });
-            renderPlayers(teamId);
-            saveTeams(); // Salva as alterações no LocalStorage
+        function saveTeams() {
+            localStorage.setItem("teams", JSON.stringify(teams));
         }
-    }
 
-    function renderPlayers(teamId) {
-        const team = teams.find(t => t.id === teamId);
-        const playersContainer = document.getElementById(`players-container-${teamId}`);
-        playersContainer.innerHTML = "";
+        function addTeam() {
+            const teamId = teams.length + 1;
+            const teamData = {
+                id: teamId,
+                name: `Time ${teamId}`,
+                points: 0,
+                logo: "",
+                players: [],
+            };
+            teams.push(teamData);
+            sortTeams();
+            renderTeams();
+            saveTeams();
+        }
 
-        team.players.forEach((player, index) => {
-            const playerDiv = document.createElement("div");
-            playerDiv.classList.add("player");
-            playerDiv.innerHTML = `
-                <img src="${player.photo || "placeholder.png"}" class="player-photo" onclick="editPlayer(${teamId}, ${index})" alt="Foto do Jogador">
-                <span class="player-name">${player.name}</span>
-            `;
-            playersContainer.appendChild(playerDiv);
-        });
-    }
+        function renderTeams() {
+            const container = document.getElementById("ranking-table");
+            container.innerHTML = "";
+            teams.forEach((team, index) => {
+                const teamDiv = document.createElement("tr");
+                teamDiv.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${team.name}</td>
+                    <td>${team.points}</td>
+                    <td>
+                        <button class="btn btn-warning" onclick="editTeam(${team.id})">Editar</button>
+                    </td>
+                `;
+                container.appendChild(teamDiv);
+            });
+        }
 
-    function editPlayer(teamId, playerIndex) {
-        const team = teams.find(t => t.id === teamId);
-        const player = team.players[playerIndex];
+        function editTeam(teamId) {
+            const team = teams.find(t => t.id === teamId);
 
-        const newName = prompt("Digite o novo nome do jogador:", player.name);
-        const newPhoto = prompt("Insira o novo URL da foto do jogador:", player.photo);
+            const newName = prompt("Digite o novo nome do time:", team.name);
+            const newPoints = prompt("Digite os pontos do time:", team.points);
 
-        if (newName) player.name = newName;
-        if (newPhoto) player.photo = newPhoto;
+            if (newName !== null && newName.trim() !== "") {
+                team.name = newName;
+            }
+            if (newPoints !== null && !isNaN(newPoints) && newPoints.trim() !== "") {
+                team.points = parseInt(newPoints);
+            }
 
-        renderPlayers(teamId); // Atualiza a lista de jogadores
-        saveTeams(); // Salva as alterações no LocalStorage
-    }
+            sortTeams();
+            renderTeams();
+            saveTeams();
+        }
 
-    function sortTeams() {
-        teams.sort((a, b) => b.points - a.points);
-    }
+        function sortTeams() {
+            teams.sort((a, b) => b.points - a.points);
+        }
 
-    // Renderizar os times ao carregar a página
-    renderTeams();
-</script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="script.js"></script>
-</script>
+        renderTeams();
+    </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
