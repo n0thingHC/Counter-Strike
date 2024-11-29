@@ -1,0 +1,28 @@
+/* Corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Tema Escuro */
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f4;
+}
+
+/* Cabeçalho */
+header.dark-mode {
+    background-color: #333;
+}
+
+footer.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Modo escuro para o botão de alternar tema */
+#dark-mode-toggle.dark-mode {
+    background-color: #444;
+}

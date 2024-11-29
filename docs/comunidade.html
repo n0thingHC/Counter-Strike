@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>InfoStrike</title>
+        <title>InfoStrike - Comunidade</title>
         <!-- Link do Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Link dos ícones do Bootstrap -->
@@ -12,19 +12,19 @@
     </head>
     <body>
         <!-- Cabeçalho -->
-        <header class="bg-warning py-3 d-flex align-items-center justify-content-between">
+        <header class="bg-warning py-3 d-flex justify-content-between align-items-center">
             <!-- Botão do Menu no canto esquerdo -->
             <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
                 <i class="bi bi-list"></i> Menu
             </button>
             <!-- Logo centralizada -->
-            <img src="banner.jpeg" alt="Logo InfoStrike" class="logo mx-auto">
+            <img src="banner.jpeg" alt="Logo InfoStrike" class="logo" style="max-height: 60px;">
             <!-- Botão de Tema no canto direito -->
             <button id="dark-mode-toggle" class="btn btn-dark">
                 <i class="bi bi-moon-fill"></i> Tema
             </button>
         </header>
-    
+
         <!-- Menu Lateral -->
         <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
             <div class="offcanvas-header">
@@ -49,15 +49,43 @@
             </div>
         </div>
     
-    <h2>Participe da Comunidade</h2>
-    <form>
-        <textarea placeholder="Deixe seu comentário" rows="4" cols="50"></textarea><br>
-        <button type="submit">Enviar</button>
-    </form>
-</section>
-<footer><p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p></footer>
- <!-- Script do Bootstrap -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
- <script src="script.js"></script>
-</body>
+        <!-- Conteúdo da página Comunidade -->
+        <section id="comunidade">
+            <h2>Participe da Comunidade</h2>
+            <form id="comentarioForm">
+                <input type="text" id="nomeUsuario" placeholder="Seu nome" required><br>
+                <textarea id="comentario" placeholder="Deixe seu comentário" rows="4" cols="50" required></textarea><br>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <div id="comentarios">
+                <!-- Comentários serão exibidos aqui -->
+            </div>
+        </section>
+
+        <section id="topicos">
+            <h2>Tópicos Populares</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="imagem_tema_1.jpg" class="card-img-top" alt="Tópico 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Tópico 1</h5>
+                            <p class="card-text">Descrição do tópico 1 da comunidade.</p>
+                            <a href="#" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 InfoStrike. Todos os direitos reservados.</p>
+        </footer>
+
+        <!-- Script do Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Script de Comentários -->
+        <script src="script.js"></script>
+    </body>
 </html>

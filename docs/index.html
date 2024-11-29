@@ -1,172 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <!DOCTYPE html>
-    <html lang="pt-BR">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>InfoStrike</title>
-            <!-- Link do Bootstrap CSS -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-            <!-- Link dos ícones do Bootstrap -->
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-            <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
-            <!-- Cabeçalho -->
-            <header class="bg-warning py-3 d-flex align-items-center justify-content-between">
-                <!-- Botão do Menu no canto esquerdo -->
-                <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-                    <i class="bi bi-list"></i> Menu
-                </button>
-                <!-- Logo centralizada -->
-                <img src="banner.jpeg" alt="Logo InfoStrike" class="logo mx-auto">
-                <!-- Botão de Tema no canto direito -->
-                <button id="dark-mode-toggle" class="btn btn-dark">
-                    <i class="bi bi-moon-fill"></i> Tema
-                </button>
-            </header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoStrike - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-warning py-3 d-flex justify-content-between align-items-center">
+        <!-- Botão de Menu (Lado Esquerdo) -->
+        <button class="btn btn-dark" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+            <i class="bi bi-list"></i> Menu
+        </button>
         
-            <!-- Menu Lateral -->
-            <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
-                <div class="offcanvas-header">
-                    <h5 id="sidebarLabel" class="text-dark"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="list-unstyled">
-                        <li><a href="index.html" class="text-dark"><i class="bi bi-house-fill"></i> Home</a></li>
-                        <li><a href="historia.html" class="text-dark"><i class="bi bi-book"></i> História</a></li>
-                        <li><a href="modos.html" class="text-dark"><i class="bi bi-controller"></i> Modos de Jogo</a></li>
-                        <li><a href="campeonatos.html" class="text-dark"><i class="bi bi-trophy-fill"></i> Campeonatos</a></li>
-                        <li><a href="mapas.html" class="text-dark"><i class="bi bi-map"></i> Mapas</a></li>
-                        <li><a href="armas.html" class="text-dark"><i class="bi bi-crosshair"></i> Armas</a></li>
-                        <li><a href="comunidade.html" class="text-dark"><i class="bi bi-people-fill"></i> Comunidade</a></li>
-                        <li><a href="contato.html" class="text-dark"><i class="bi bi-envelope"></i> Contato</a></li>
-                        <li><a href="noticias.html" class="text-dark"><i class="bi bi-newspaper"></i> Noticias</a></li>
-                        <li><a href="ranking.html" class="text-dark"><i class="bi bi-graph-up-arrow"></i> Ranking</a></li>
-                        <li><a href="galeria.html" class="text-dark"><i class="bi bi-card-image"></i> Galeria</a></li>
-                        <li><a href="como-funciona.html" class="text-dark"><i class="bi bi-card-image"></i> Como Funciona</a></li>
-                    </ul>
-                </div>
-            </div>
+        <!-- Imagem do Banner (Centralizado) -->
+        <div class="mx-auto">
+            <img src="banner.jpeg" alt="Banner InfoStrike" class="img-fluid">
+        </div>
         
-            <!-- Conteúdo Principal -->
-            <main class="container mt-3">
-                <h1 class="text-center">Bem-vindo ao InfoStrike!</h1>
-                <p class="text-center">Explore todas as informações sobre o universo de Counter-Strike, desde suas origens até as versões mais recentes.</p>
-            </main>
-            
-    <!-- Seção principal -->
-    <section>
-        <div class="carousel">
-            <img src="banner1.jpeg" alt="Banner 1">
+        <!-- Botão de Alternar Tema (Lado Direito) -->
+        <button id="dark-mode-toggle" class="btn btn-dark">
+            <i class="bi bi-moon-fill"></i> Tema
+        </button>
+    </header>
+
+    <!-- Menu Lateral -->
+    <div class="offcanvas offcanvas-start bg-warning" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+        <div class="offcanvas-header">
+            <h5 id="sidebarLabel" class="text-dark">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-unstyled">
+                <li><a href="index.html" class="text-dark"><i class="bi bi-house-fill"></i> Home</a></li>
+                <li><a href="historia.html" class="text-dark"><i class="bi bi-book"></i> História</a></li>
+                <li><a href="modos.html" class="text-dark"><i class="bi bi-controller"></i> Modos de Jogo</a></li>
+                <li><a href="campeonatos.html" class="text-dark"><i class="bi bi-trophy-fill"></i> Campeonatos</a></li>
+                <li><a href="mapas.html" class="text-dark"><i class="bi bi-map"></i> Mapas</a></li>
+                <li><a href="armas.html" class="text-dark"><i class="bi bi-crosshair"></i> Armas</a></li>
+                <li><a href="comunidade.html" class="text-dark"><i class="bi bi-people-fill"></i> Comunidade</a></li>
+                <li><a href="contato.html" class="text-dark"><i class="bi bi-envelope"></i> Contato</a></li>
+                <li><a href="noticias.html" class="text-dark"><i class="bi bi-newspaper"></i> Noticias</a></li>
+                <li><a href="ranking.html" class="text-dark"><i class="bi bi-graph-up-arrow"></i> Ranking</a></li>
+                <li><a href="galeria.html" class="text-dark"><i class="bi bi-card-image"></i> Galeria</a></li>
+                <li><a href="como-funciona.html" class="text-dark"><i class="bi bi-card-image"></i> Como Funciona</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="container mt-3">
+        <h1 class="text-center">Bem-vindo ao InfoStrike!</h1>
+
+        <div class="conteudo-barrado"></div>
+
+        <p class="text-center">
+            O InfoStrike é um portal dedicado ao universo de Counter-Strike. Aqui, você encontra tudo sobre o jogo, desde sua história até dicas para melhorar no jogo.
+        </p>
+        
+        <!-- Adicionando uma imagem relevante para o conteúdo -->
+        <div class="text-center">
+            <img src="banner1.jpeg" alt="Imagem ilustrativa de Counter-Strike" class="img-fluid mb-3">
         </div>
 
-        <h2>Notícias em Destaque</h2>
+        <!-- Links rápidos -->
+        <div class="row text-center">
+            <div class="col">
+                <a href="historia.html" class="btn btn-outline-primary">História</a>
+            </div>
+            <div class="col">
+                <a href="modos.html" class="btn btn-outline-primary">Modos de Jogo</a>
+            </div>
+            <div class="col">
+                <a href="campeonatos.html" class="btn btn-outline-primary">Campeonatos</a>
+            </div>
+        </div>
+    </main>
 
-        <div class="news" id="news-container"></div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 História do Counter-Strike. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Script para carregar o cabeçalho -->
-    <script>
-        // Carregar o cabeçalho
-
-
-        // Função para carregar as notícias do localStorage
-        function carregarNoticias() {
-            const noticiasSalvas = JSON.parse(localStorage.getItem('noticias'));
-            const newsContainer = document.getElementById('news-container');
-            newsContainer.innerHTML = ''; // Limpa as notícias atuais
-
-            if (noticiasSalvas) {
-                noticiasSalvas.forEach((noticia, index) => {
-                    const noticiaDiv = document.createElement('div');
-                    noticiaDiv.classList.add('news-item');
-                    noticiaDiv.innerHTML = `
-                        <img src="${noticia.imagem}" alt="Notícia ${index + 1}">
-                        <div>
-                            <h3><a href="${noticia.link}" class="news-link">${noticia.titulo}</a></h3>
-                            <p>${noticia.legenda}</p>
-                        </div>
-                        <div class="button-container">
-                            <button class="edit-button" onclick="editarNoticia(event, ${index})">Editar</button>
-                            <button class="delete-button" onclick="removerNoticia(event, ${index})">Excluir</button>
-                        </div>
-                    `;
-                    newsContainer.appendChild(noticiaDiv);
-                });
-            }
-        }
-
-        // Função para editar notícia
-        function editarNoticia(event, index) {
-            event.stopPropagation(); // Impede a propagação do clique para evitar erro de duplicação
-
-            const noticiasSalvas = JSON.parse(localStorage.getItem('noticias'));
-            const noticia = noticiasSalvas[index];
-
-            const novoTitulo = prompt("Novo título:", noticia.titulo);
-            const novaLegenda = prompt("Nova legenda:", noticia.legenda);
-            const novaImagem = prompt("Nova URL da imagem:", noticia.imagem);
-            const novoLink = prompt("Novo link do título:", noticia.link);
-
-            if (novoTitulo) noticia.titulo = novoTitulo;
-            if (novaLegenda) noticia.legenda = novaLegenda;
-            if (novaImagem) noticia.imagem = novaImagem;
-            if (novoLink) noticia.link = novoLink;
-
-            // Salva as mudanças no localStorage
-            localStorage.setItem('noticias', JSON.stringify(noticiasSalvas));
-            carregarNoticias(); // Recarrega as notícias
-        }
-
-        // Função para excluir notícia
-        function removerNoticia(event, index) {
-            event.stopPropagation();
-
-            const noticiasSalvas = JSON.parse(localStorage.getItem('noticias'));
-            noticiasSalvas.splice(index, 1); // Remove a notícia no índice especificado
-
-            // Salva novamente no localStorage
-            localStorage.setItem('noticias', JSON.stringify(noticiasSalvas));
-            carregarNoticias(); // Recarrega as notícias
-        }
-
-        // Função para adicionar nova notícia
-        function adicionarNoticia() {
-            const titulo = prompt("Título da notícia:");
-            const legenda = prompt("Legenda da notícia:");
-            const imagem = prompt("URL da imagem:");
-            const link = prompt("Link da notícia:");
-
-            if (titulo && legenda && imagem && link) {
-                const noticiasSalvas = JSON.parse(localStorage.getItem('noticias')) || [];
-                noticiasSalvas.push({ titulo, legenda, imagem, link });
-
-                // Salva no localStorage
-                localStorage.setItem('noticias', JSON.stringify(noticiasSalvas));
-                carregarNoticias(); // Recarrega as notícias
-            }
-        }
-
-        // Carrega as notícias ao iniciar a página
-        carregarNoticias();
-
-        // Função para carregar as notícias automaticamente
-        window.onload = function () {
-            const adicionarButton = document.createElement('button');
-            adicionarButton.textContent = 'Adicionar Notícia';
-            adicionarButton.onclick = adicionarNoticia;
-            document.body.appendChild(adicionarButton);
-        };
-        <!-- Script do Bootstrap -->
-    </script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
